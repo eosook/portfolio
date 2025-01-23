@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import './App.css'
+import './App.scss'
+import Header from './components/Header/Header'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <div class="portfolio">
         <h1>Portfolio</h1>
+        <Header />
       </div>
     </>
   )

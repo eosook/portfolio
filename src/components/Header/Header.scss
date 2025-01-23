@@ -1,0 +1,23 @@
+@use "../../styles/fonts" as *;
+
+.header{
+    width: 100%;
+    border: 2px solid black;
+
+    &__list{
+        display: flex;
+        justify-content: right;
+        list-style-type: none;
+        gap: 4rem;
+        padding: 0.5rem 2rem;
+        width: 100%;
+        &-item{
+            font-family: $poppins-font;
+            font-size: 2rem;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
