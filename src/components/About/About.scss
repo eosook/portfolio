@@ -1,1 +1,33 @@
 @use "../../styles/fonts" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/media-queries" as *;
+
+.about {
+  border: 2px solid black;
+  height: calc(100vh - 64px);
+  padding: 2rem;
+  text-align: center;
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    gap: 4rem;
+  }
+  @include desktop{
+    gap: 12rem;
+  }
+
+  &__container {
+    margin-bottom: 4rem;
+  }
+  &__title {
+    @include title(2rem, 500);
+  }
+  &__subtitle {
+    @include title(1.5rem, 500);
+  }
+  &__image {
+    height: 400px;
+  }
+}

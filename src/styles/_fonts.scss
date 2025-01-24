@@ -59,6 +59,12 @@
   font-weight: 500;
 }
 
+@mixin title($font-size, $weight){
+  font-family: $poppins-font;
+  font-size: $font-size;
+  font-weight: $weight;
+}
+
 $poppins-font: Poppins, Arial, Helvetica, sans-serif;
 $oswald-font: Oswald, Arial, Helvetica, sans-serif;
 $bodoni-font: Bodoni, Arial, Helvetica, sans-serif;
