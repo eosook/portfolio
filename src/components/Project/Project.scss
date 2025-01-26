@@ -3,7 +3,8 @@
 @use "../../styles/media-queries" as *;
 
 .project{
-    border: 2px solid black;
+    border: 1px solid black;
+    border-radius: 8px;
     margin-bottom: 2rem;
     @include tablet{
         display: flex;
@@ -15,6 +16,14 @@
         @include tablet{
             width: 800px;
         }
+    }
+    &__title{
+        @include title(2rem, 500);
+    }
+    &__description{
+        font-family: $oswald-font;
+        font-size: 1.25rem;
+        margin: 1rem 0;
     }
     &__image{
         width: 100%;
@@ -31,5 +40,20 @@
         @include tablet{
             width: 500px;
         }
+    }
+    &__techs{
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+
+        &-single{
+            border: 1px solid black;
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+    }
+    &__button-site{
+        padding: 1rem;
     }
 }

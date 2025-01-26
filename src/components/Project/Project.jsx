@@ -22,12 +22,18 @@ export default function Project({
           <h2 className="project__title">{title}</h2>
           <p className="project__description">{description}</p>
           <div className="project__techs">
-            React.js, Email Integration, Responsive Design
+            {techs.map((tech) => {
+              return <div className="project__techs-single">{tech}</div>;
+            })}
           </div>
-          <button onClick={() => toProject(siteUrl)}>View Site</button>
+          <button className="project__button-site" onClick={() => toProject(siteUrl)}>View Site</button>
         </div>
         <div className="project__container">
-          <img src={image} alt="Project Image" className="project__image project__image-right" />
+          <img
+            src={image}
+            alt="Project Image"
+            className="project__image project__image-right"
+          />
         </div>
       </div>
     );
@@ -35,15 +41,21 @@ export default function Project({
     return (
       <div className="project">
         <div className="project__container">
-          <img src={image} alt="Project Image" className="project__image project__image-left" />
+          <img
+            src={image}
+            alt="Project Image"
+            className="project__image project__image-left"
+          />
         </div>
         <div className="project__container">
           <h2 className="project__title">{title}</h2>
           <p className="project__description">{description}</p>
           <div className="project__techs">
-            React.js, Email Integration, Responsive Design
+            {techs.map((tech) => {
+              return <div className="project__techs-single">{tech}</div>;
+            })}
           </div>
-          <button onClick={() => toProject(siteUrl)}>View Site</button>
+          <button className="project__button-site" onClick={() => toProject(siteUrl)}>View Site</button>
         </div>
       </div>
     );
