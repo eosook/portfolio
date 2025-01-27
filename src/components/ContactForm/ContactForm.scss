@@ -1,0 +1,26 @@
+@use "../../styles/fonts" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/media-queries" as *;
+
+.contact-form{
+    &__input{
+        width: 100%;
+        padding: 0.25rem 1rem;
+        margin: 1rem 0;
+        font-size: 1rem;
+    }
+    &__textarea{
+        resize: none;
+        min-height: 200px;
+        padding: 0.5rem 1rem;
+    }
+    &__button{
+        padding: 1rem;
+    }
+    &__success{
+        display: block;
+    }
+    &__false{
+        display: none;
+    }
+}
