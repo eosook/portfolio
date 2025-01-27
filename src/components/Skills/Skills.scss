@@ -1,3 +1,36 @@
 @use "../../styles/fonts" as *;
 @use "../../styles/mixins" as *;
 @use "../../styles/media-queries" as *;
+
+.skills{
+    text-align: center;
+    padding: 2rem;
+    border: 2px solid black;
+    &__title{
+        @include title(2rem, 500);
+    }
+    &__subtitle{
+        @include title(1.5rem, 500);
+        margin: 0 0 2rem;
+    }
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 1px solid black;
+        border-radius: 16px;
+        padding: 1rem;
+    }
+    &__image{
+        width: 24px;
+    }
+    &__name{
+        @include title(1rem, 500);
+    }
+}
