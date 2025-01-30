@@ -14,3 +14,15 @@
 button{
   cursor: pointer;
 }
+
+.portfolio{
+
+  &__section{
+    &-visible{
+      opacity: 1;
+    } 
+    &-invisible{
+      opacity: 0;
+    }
+  }
+}

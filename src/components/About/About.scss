@@ -1,6 +1,8 @@
 @use "../../styles/fonts" as *;
 @use "../../styles/mixins" as *;
 @use "../../styles/media-queries" as *;
+@use "../../styles/colors" as *;
+@use "../../styles/animations" as *;
 
 .about {
   border: 2px solid black;

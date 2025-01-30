@@ -1,25 +1,58 @@
 @use "../../styles/fonts" as *;
 @use "../../styles/mixins" as *;
 @use "../../styles/media-queries" as *;
+@use "../../styles/colors" as *;
+@use "../../styles/animations" as *;
 
 .header {
-  width: 100%;
-  border: 2px solid black;
+  position: fixed;
+  width: calc(100% - 8rem);
+  z-index: 1;
+  padding: 0.5rem 3rem;
+  margin: 2rem 4rem;
+  border: 1px solid black;
+  border-radius: 24px;
+  background-color: #001f3f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include tablet {
+    padding: 1.5rem 4rem;
+  }
+
+  &__reverse{
+    animation: 0.25s ease-in 0s reverseExpand;
+  }
+
+  &__expand{
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+    animation: 0.25s ease-in 0s expand;
+  }
 
   &__list {
     display: flex;
-    justify-content: right;
     list-style-type: none;
     gap: 4rem;
-    padding: 0.5rem 2rem;
-    width: 100%;
     &-item {
-      font-family: $poppins-font;
-      font-size: 2rem;
+      font-family: $oswald-font;
+      font-size: 1.5rem;
+      color: white;
+      border-bottom: 3px solid transparent;
 
       &:hover {
         cursor: pointer;
+        color: $highlighted-blue;
+        border-bottom: 3px solid $highlighted-blue;
       }
+    }
+  }
+
+  &__contact {
+    &-button {
+      @include button;
     }
   }
 }
