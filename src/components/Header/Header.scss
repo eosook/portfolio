@@ -5,42 +5,74 @@
 @use "../../styles/animations" as *;
 
 .header {
-  position: fixed;
-  width: calc(100% - 8rem);
-  z-index: 1;
-  padding: 0.5rem 3rem;
-  margin: 2rem 4rem;
-  border: 1px solid black;
-  border-radius: 24px;
-  background-color: #001f3f;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  width: calc(100% - 4rem);
+  z-index: 1;
+  padding: 0.5rem 1.5rem;
+  margin: 2rem 2rem;
+  border: 1px solid black;
+  border-radius: 24px;
+  background-color: $secondary-blue;
 
   @include tablet {
+    width: calc(100% - 8rem);
     padding: 1.5rem 4rem;
+    margin: 2rem 4rem;
   }
 
   &__reverse{
-    animation: 0.25s ease-in 0s reverseExpand;
+    animation: 0.25s ease-in 0s mobileReverseExpand;
+
+    @include tablet{
+      animation: 0.25s ease-in 0s reverseExpand;
+    }
   }
 
   &__expand{
     margin: 0;
     width: 100%;
     border-radius: 0;
-    animation: 0.25s ease-in 0s expand;
+    animation: 0.25s ease-in 0s mobileExpand;
+
+    @include tablet{
+      animation: 0.25s ease-in 0s expand;
+    }
+  }
+
+  &__right-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    @include desktop{
+      gap: 2rem;
+    }
   }
 
   &__list {
-    display: flex;
-    list-style-type: none;
-    gap: 4rem;
+    display: none;
+
+    @include tablet{
+      display: flex;
+      list-style-type: none;
+      gap: 4rem;
+    }
+
     &-item {
       font-family: $oswald-font;
       font-size: 1.5rem;
       color: white;
       border-bottom: 3px solid transparent;
+
+      &::after{
+        content: '';
+        height: 3px;
+        background: $highlighted-blue;
+        display: block;
+      }
 
       &:hover {
         cursor: pointer;
@@ -50,9 +82,46 @@
     }
   }
 
+  &__mode{
+    height: 40px;
+    width: 40px;
+    transition: transform .7s ease-in-out;
+    &:hover{
+      cursor: pointer;
+      transform: rotate(360deg);
+    }
+  }
+
   &__contact {
+    display: none;
+
+    @include tablet{
+      display: block;
+    }
     &-button {
       @include button;
+      background-color: #FF851B;
+    }
+  }
+
+  &__menu{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 25%;
+    padding: 0.5rem;
+
+    @include tablet{
+      display: none;
+    }
+
+    &-image{
+      height: 28px;
+      width: 28px;
+
+      &:hover{
+        cursor: pointer;
+      }
     }
   }
 }

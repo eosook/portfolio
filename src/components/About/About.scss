@@ -5,10 +5,11 @@
 @use "../../styles/animations" as *;
 
 .about {
-  border: 2px solid black;
-  height: calc(100vh - 64px);
+  height: 100vh;
+  min-height: 400px;
   padding: 2rem;
   text-align: center;
+  background-image: linear-gradient(135deg, #001F3F, #0074D9);
   @include tablet {
     display: flex;
     align-items: center;

@@ -14,7 +14,7 @@ function App() {
   return (
     <div class="portfolio">
       <Header visible={isVisible[0]}/>
-      <div key={0} ref={refs[0]} className={isVisible[0] ? "portfolio__section-visible" : "portfolio__section-invisible"}>
+      <div key={0} ref={refs[0]} className="portfolio__section-visible">
         <About />
       </div>
       <Projects />
