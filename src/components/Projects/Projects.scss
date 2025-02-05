@@ -1,3 +1,76 @@
 @use "../../styles/fonts" as *;
 @use "../../styles/mixins" as *;
 @use "../../styles/media-queries" as *;
+
+$work-container-background: rgb(151, 123, 123);
+
+.projects {
+  background-color: #f2f2f2;
+
+  @include tablet {
+    padding: 0 4rem;
+  }
+  &__header {
+    @include header(2rem);
+    text-align: center;
+    padding: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__section {
+    margin: 0 auto;
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    @include desktop{
+        gap: 4rem;
+    }
+  }
+
+  &__mini {
+    min-width: 300px;
+    width: 300px;
+    height: 600px;
+    border: 2px solid black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    overflow: hidden;
+    justify-content: space-between;
+    background-color: $work-container-background;
+    margin: 0 auto;
+
+    &-logo {
+      width: 80px;
+      height: 80px;
+    }
+
+    &-image {
+      width: 300px;
+    }
+  }
+
+  &__mini-close {
+    cursor: pointer;
+  }
+
+  &__mini-expand {
+    position: fixed;
+    animation: 2s ease-in-out 0s expandWork;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: scale(1);
+    z-index: 1;
+    background-color: $work-container-background;
+    border: none;
+  }
+
+  &__mini-remove {
+    display: none;
+  }
+}

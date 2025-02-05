@@ -1,5 +1,5 @@
 import "./About.scss";
-import aboutImage from "../../assets/images/Cozy Warming Pad.png";
+import aboutImage from "../../assets/images/my-photo.jpg";
 
 export default function About() {
   function sendTo(url) {

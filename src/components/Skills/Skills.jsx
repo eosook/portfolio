@@ -10,8 +10,8 @@ import mysqlLogo from "../../assets/images/mysql-logo.png"
 export default function Skills(){
     return (
         <div className="skills">
-            <h2 className="skills__title">My Skills</h2>
-            <h3 className="skills__subtitle">Subtitle</h3>
+            <h2 className="skills__title">Tools of the Trade</h2>
+            <h3 className="skills__subtitle"></h3>
             <div className="skills__list">
                 <div className="skills__item">
                     <img className="skills__image" src={reactLogo}></img>

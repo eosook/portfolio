@@ -3,11 +3,91 @@ import Project from "../Project/Project";
 import cilesiaImage from "../../assets/images/Cilesia Website.png";
 import gameRecImage from "../../assets/images/GameRec.png";
 import invoiceImage from "../../assets/images/Invoice App Dark.png";
+import cilesiaLogo from "../../assets/images/cilesiaLogo.png";
+import { useState } from "react";
 
 export default function Projects() {
+  const [selectedWork, setSelectedWork] = useState(0);
+
+  function changeWork(number) {
+    setSelectedWork(number);
+  }
+  function closeWork() {
+    setSelectedWork(0);
+  }
   return (
     <div className="projects">
-      <div className="projects__header">My Projects</div>
+      <div className="projects__header">Some of my work</div>
+      <div className="projects__section">
+        <div
+          className={
+            selectedWork == 1
+              ? "projects__mini projects__mini-expand"
+              : selectedWork == 0
+              ? "projects__mini"
+              : "projects__mini-remove"
+          }
+          onClick={() => setSelectedWork(1)}
+        >
+          <button className="projects__mini-close" onClick={(event) => {
+            event.stopPropagation();
+            setSelectedWork(0);
+            }}>
+            X
+          </button>
+          <img
+            className="projects__mini-logo"
+            src={cilesiaLogo}
+            alt="cilesia beauty bar logo"
+          ></img>
+          <img
+            className="projects__mini-image"
+            src={cilesiaImage}
+            alt="cilesia website image"
+          ></img>
+        </div>
+        <div className={
+            selectedWork == 2
+              ? "projects__mini projects__mini-expand"
+              : selectedWork !== 0
+              ? "projects__mini-remove"
+              : "projects__mini"
+          }
+          onClick={() => setSelectedWork(2)}>
+            <div className="projects__mini-close">
+            X
+          </div>
+          <img
+            className="projects__mini-logo"
+            src={cilesiaLogo}
+            alt="cilesia beauty bar logo"
+          ></img>
+          <img
+            className="projects__mini-image"
+            src={gameRecImage}
+            alt="cilesia website image"
+          ></img>
+        </div>
+        <div className={
+            selectedWork == 3
+              ? "projects__mini projects__mini-expand"
+              : selectedWork !== 0
+              ? "projects__mini-remove"
+              : "projects__mini"
+          }
+          onClick={() => setSelectedWork(3)}>
+          <img
+            className="projects__mini-logo"
+            src={cilesiaLogo}
+            alt="cilesia beauty bar logo"
+          ></img>
+          <img
+            className="projects__mini-image"
+            src={invoiceImage}
+            alt="cilesia website image"
+          ></img>
+        </div>
+      </div>
       <Project
         image={cilesiaImage}
         title={"Cilesia Beauty Bar"}
@@ -25,7 +105,13 @@ export default function Projects() {
           "I developed a full-stack web application designed to help users discover new games tailored to their preferences. The platform integrates with the IGDB API from Twitch to fetch detailed game information, while users can create personalized accounts, maintain wishlists, and explore game recommendations."
         }
         siteUrl={"https://cilesiabeautybar.com"}
-        techs={["React.js", "Node.js", "IGDB API", "SQL", "Full-Stack Development"]}
+        techs={[
+          "React.js",
+          "Node.js",
+          "IGDB API",
+          "SQL",
+          "Full-Stack Development",
+        ]}
         side={"left"}
       />
       <Project

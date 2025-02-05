@@ -70,6 +70,18 @@
   font-weight: $weight;
 }
 
+@mixin header($font-size){
+  font-family: $poppins-font;
+  font-size: $font-size;
+  font-weight: 500;
+}
+
+@mixin body($font-size){
+  font-family: $poppins-font;
+  font-size: $font-size;
+  font-weight: 400;
+}
+
 $poppins-font: Poppins, Arial, Helvetica, sans-serif;
 $oswald-font: Oswald, Arial, Helvetica, sans-serif;
 $bodoni-font: Bodoni, Arial, Helvetica, sans-serif;
