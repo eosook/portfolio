@@ -19,7 +19,7 @@ button{
 }
 
 .portfolio{
-
+  overflow: hidden;
   &__section{
     &-visible{
       opacity: 1;
@@ -28,4 +28,8 @@ button{
       opacity: 0;
     }
   }
+}
+
+.remove__scroll{
+  overflow: hidden;
 }

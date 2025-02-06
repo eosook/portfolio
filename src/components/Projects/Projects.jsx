@@ -5,19 +5,38 @@ import gameRecImage from "../../assets/images/GameRec.png";
 import invoiceImage from "../../assets/images/Invoice App Dark.png";
 import cilesiaLogo from "../../assets/images/cilesiaLogo.png";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const [selectedWork, setSelectedWork] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   function changeWork(number) {
     setSelectedWork(number);
+    document.body.classList.add("remove__scroll");
   }
   function closeWork() {
     setSelectedWork(0);
+    document.body.classList.remove("remove__scroll");
   }
   return (
     <div className="projects">
       <div className="projects__header">Some of my work</div>
+      <motion.div
+        layout
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="fixed bg-blue-500 p-4 text-white cursor-pointer"
+        initial={false}
+        animate={{
+          width: isExpanded ? "100vw" : "200px",
+          height: isExpanded ? "100vh" : "150px",
+          top: isExpanded ? 0 : "50px",
+          left: isExpanded ? 0 : "50px",
+        }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+      >
+        Click to {isExpanded ? "shrink" : "expand"}
+      </motion.div>
       <div className="projects__section">
         <div
           className={
@@ -27,12 +46,15 @@ export default function Projects() {
               ? "projects__mini"
               : "projects__mini-remove"
           }
-          onClick={() => setSelectedWork(1)}
+          onClick={() => changeWork(1)}
         >
-          <button className="projects__mini-close" onClick={(event) => {
-            event.stopPropagation();
-            setSelectedWork(0);
-            }}>
+          <button
+            className="projects__mini-close"
+            onClick={(event) => {
+              event.stopPropagation();
+              closeWork();
+            }}
+          >
             X
           </button>
           <img
@@ -46,17 +68,17 @@ export default function Projects() {
             alt="cilesia website image"
           ></img>
         </div>
-        <div className={
+        <div
+          className={
             selectedWork == 2
               ? "projects__mini projects__mini-expand"
               : selectedWork !== 0
               ? "projects__mini-remove"
               : "projects__mini"
           }
-          onClick={() => setSelectedWork(2)}>
-            <div className="projects__mini-close">
-            X
-          </div>
+          onClick={() => setSelectedWork(2)}
+        >
+          <div className="projects__mini-close">X</div>
           <img
             className="projects__mini-logo"
             src={cilesiaLogo}
@@ -68,14 +90,16 @@ export default function Projects() {
             alt="cilesia website image"
           ></img>
         </div>
-        <div className={
+        <div
+          className={
             selectedWork == 3
               ? "projects__mini projects__mini-expand"
               : selectedWork !== 0
               ? "projects__mini-remove"
               : "projects__mini"
           }
-          onClick={() => setSelectedWork(3)}>
+          onClick={() => setSelectedWork(3)}
+        >
           <img
             className="projects__mini-logo"
             src={cilesiaLogo}

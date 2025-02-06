@@ -64,10 +64,10 @@ $work-container-background: rgb(151, 123, 123);
     height: 100vh;
     top: 0;
     left: 0;
-    transform: scale(1);
     z-index: 1;
     background-color: $work-container-background;
     border: none;
+    overflow: hidden;
   }
 
   &__mini-remove {
