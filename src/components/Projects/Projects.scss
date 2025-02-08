@@ -4,6 +4,10 @@
 
 $work-container-background: rgb(151, 123, 123);
 
+.motion__test{
+  border: 2px solid black;
+}
+
 .projects {
   background-color: #f2f2f2;
 
@@ -33,7 +37,6 @@ $work-container-background: rgb(151, 123, 123);
     min-width: 300px;
     width: 300px;
     height: 600px;
-    border: 2px solid black;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -42,6 +45,7 @@ $work-container-background: rgb(151, 123, 123);
     justify-content: space-between;
     background-color: $work-container-background;
     margin: 0 auto;
+    z-index: 1;
 
     &-logo {
       width: 80px;
@@ -57,18 +61,18 @@ $work-container-background: rgb(151, 123, 123);
     cursor: pointer;
   }
 
-  &__mini-expand {
-    position: fixed;
-    animation: 2s ease-in-out 0s expandWork;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-color: $work-container-background;
-    border: none;
-    overflow: hidden;
-  }
+  // &__mini-expand {
+  //   position: fixed;
+  //   animation: 2s ease-in-out 0s expandWork;
+  //   width: 100vw;
+  //   height: 100vh;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: 1;
+  //   background-color: $work-container-background;
+  //   border: none;
+  //   overflow: hidden;
+  // }
 
   &__mini-remove {
     display: none;
