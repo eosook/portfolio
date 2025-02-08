@@ -1,7 +1,6 @@
 @use "./styles/fonts" as *;
-@use "./styles/colors" as *;
 @use "./styles/mixins" as *;
-@use "./styles/media-queries" as *;
+@use "./styles/variables" as *;
 
 *,
 *::before,

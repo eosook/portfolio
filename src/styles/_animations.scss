@@ -1,5 +1,5 @@
-@use "./colors" as *;
-@use "./media-queries" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
 @use "./fonts" as *;
 
 @keyframes mobileExpand {

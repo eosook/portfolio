@@ -1,3 +1,33 @@
 @use "../../styles/fonts" as *;
 @use "../../styles/mixins" as *;
-@use "../../styles/media-queries" as *;
+@use "../../styles/animations" as *;
+@use "../../styles/variables" as *;
+
+$work-container-background: rgb(151, 123, 123);
+
+.project-card{
+    min-width: 300px;
+    width: 300px;
+    height: 600px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    overflow: hidden;
+    justify-content: space-between;
+    background-color: $work-container-background;
+    margin: 0 auto;
+
+    &__button{
+
+    }
+
+    &__logo {
+      width: 80px;
+      height: 80px;
+    }
+
+    &__image {
+      width: 300px;
+    }
+}

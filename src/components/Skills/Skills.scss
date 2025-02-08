@@ -1,6 +1,7 @@
 @use "../../styles/fonts" as *;
 @use "../../styles/mixins" as *;
-@use "../../styles/media-queries" as *;
+@use "../../styles/animations" as *;
+@use "../../styles/variables" as *;
 
 .skills{
     text-align: center;

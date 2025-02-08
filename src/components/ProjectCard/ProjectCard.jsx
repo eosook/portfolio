@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 export default function ProjectCard({ projectNumber, closeWork, changeWork, selectedWork, description, logo, image }) {
   return (
     <motion.div
-      className={"projects__mini"}
+      className={"project-card"}
       layout
       onClick={() => {
         selectedWork == projectNumber ? closeWork() : changeWork(projectNumber);
@@ -24,7 +24,7 @@ export default function ProjectCard({ projectNumber, closeWork, changeWork, sele
       transition={{ duration: 0.5, ease: "easeIn" }}
     >
       <button
-        className="projects__mini-close"
+        className="project-card__button"
         onClick={(event) => {
           event.stopPropagation();
           closeWork();
@@ -33,12 +33,12 @@ export default function ProjectCard({ projectNumber, closeWork, changeWork, sele
         X
       </button>
       <img
-        className="projects__mini-logo"
+        className="project-card__logo"
         src={logo}
         alt="cilesia beauty bar logo"
       ></img>
       <img
-        className="projects__mini-image"
+        className="project-card__image"
         src={image}
         alt="cilesia website image"
       ></img>
