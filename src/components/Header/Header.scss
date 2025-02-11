@@ -8,18 +8,18 @@
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  width: calc(100% - 4rem);
+  width: calc(100% - $margin-l * 2);
   z-index: 1;
-  padding: 0.5rem 1.5rem;
-  margin: 2rem 2rem;
+  padding: $padding-s $padding-xs;
+  margin: $margin-xl $margin-l;
   border: 1px solid black;
   border-radius: 24px;
   background-color: $secondary-blue;
 
   @include tablet {
-    width: calc(100% - 8rem);
-    padding: 1.5rem 4rem;
-    margin: 2rem 4rem;
+    width: calc(100% - $margin-xxl * 2);
+    padding: $padding-m $padding-xl;
+    margin: $margin-xl $margin-xxl;
   }
 
   &__reverse{
@@ -108,7 +108,7 @@
     align-items: center;
     background-color: white;
     border-radius: 25%;
-    padding: 0.5rem;
+    padding: $padding-xs;
 
     @include tablet{
       display: none;

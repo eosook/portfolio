@@ -3,31 +3,92 @@
 @use "../../styles/animations" as *;
 @use "../../styles/variables" as *;
 
-$work-container-background: rgb(151, 123, 123);
+$work-container-background: rgb(78, 217, 255);
 
-.project-card{
+.project-card {
+  width: 300px;
+  height: 600px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: $padding-m;
+  overflow: hidden;
+  justify-content: space-between;
+  background-color: $work-container-background;
+  margin: 0 auto $margin-l;
+
+  &:hover{
+    width: 320px;
+    height: 620px;
+  }
+
+  @include tablet {
+    padding: $padding-m;
+  }
+
+  &__expanded{
+    padding: $padding-l;
+  }
+
+  &__back-arrow{
+    filter: brightness(0) invert(1);
+  }
+
+  &__container{
+    
+  }
+
+  &__content{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 550px;
+  }
+
+  &__title{
+    @include title(1.5rem, 500);
+  }
+
+  &__description{
+    @include body(1rem);
     min-width: 300px;
     width: 300px;
-    height: 600px;
-    border-radius: 8px;
+  }
+
+  &__logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  &__techs{
+    margin: $margin-m auto 0;
     display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    overflow: hidden;
-    justify-content: space-between;
-    background-color: $work-container-background;
+    gap: 1rem;
+
+    &--item{
+      border: 1px solid black;
+      border-radius: 8px;
+      padding: $padding-xs;
+      background-color: black;
+      color: white;
+    }
+  }
+
+  &__image {
+    width: 250px;
+    height: 180px;
     margin: 0 auto;
+    border-radius: 16px;
 
-    &__button{
-
+    &-expanded{
+      width: 600px;
+      height: 400px;
+      margin-top: 2rem;
     }
+  }
+}
 
-    &__logo {
-      width: 80px;
-      height: 80px;
-    }
-
-    &__image {
-      width: 300px;
-    }
+.project-card__remove{
+  display: none;
 }

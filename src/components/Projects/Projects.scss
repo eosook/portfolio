@@ -11,7 +11,7 @@
   background-color: #f2f2f2;
 
   @include tablet {
-    padding: 0 4rem;
+    padding: 0;
   }
   &__header {
     @include header(2rem);
@@ -25,10 +25,11 @@
     @include tablet {
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 1rem;
     }
     @include desktop{
-        gap: 4rem;
+        gap: 2rem;
+        max-width: 1400px;
     }
   }
 

@@ -4,8 +4,8 @@
 
 @keyframes mobileExpand {
   0% {
-    margin: 2rem;
-    width: calc(100% - 4rem);
+    margin: $margin-xl $margin-l;
+    width: calc(100% - $margin-l * 2);
     border-radius: 24px;
   }
   100% {
@@ -22,16 +22,16 @@
     border-radius: 0;
   }
   100% {
-    margin: 2rem;
-    width: calc(100% - 4rem);
+    margin: $margin-xl $margin-l;
+    width: calc(100% - $margin-l * 2);
     border-radius: 24px;
   }
 }
 
 @keyframes expand {
   0% {
-    margin: 2rem 4rem;
-    width: calc(100% - 8rem);
+    margin: $margin-xl $margin-xxl;
+    width: calc(100% - $margin-xxl * 2);
     border-radius: 24px;
   }
   100% {
@@ -48,8 +48,8 @@
     border-radius: 0;
   }
   100% {
-    margin: 2rem 4rem;
-    width: calc(100% - 8rem);
+    margin: $margin-xl $margin-xxl;
+    width: calc(100% - $margin-xxl * 2);
     border-radius: 24px;
   }
 }

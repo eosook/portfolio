@@ -67,18 +67,21 @@
 @mixin title($font-size, $weight){
   font-family: $montserrat-font;
   font-size: $font-size;
+  line-height: $font-size * 1.2;
   font-weight: $weight;
 }
 
 @mixin header($font-size){
   font-family: $poppins-font;
   font-size: $font-size;
+  line-height: $font-size * 1.2;
   font-weight: 500;
 }
 
 @mixin body($font-size){
   font-family: $poppins-font;
   font-size: $font-size;
+  line-height: $font-size * 1.4;
   font-weight: 400;
 }
 
