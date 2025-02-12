@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import About from "./components/About/About";
@@ -11,9 +11,15 @@ import visibleOnScreen from "./observer";
 function App() {
   const refs = [useRef()];
   const isVisible = visibleOnScreen(refs);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+  
   return (
-    <div class="portfolio">
-      <Header visible={isVisible[0]}/>
+    <div class="portfolio" data-theme={darkMode ? "dark" : "light"}>
+      <Header visible={isVisible[0]} darkMode={darkMode} setDarkMode={setDarkMode}/>
       <div key={0} ref={refs[0]} className="portfolio__section-visible">
         <About />
       </div>

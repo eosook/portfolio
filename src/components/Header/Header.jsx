@@ -7,10 +7,9 @@ import sun from "../../assets/images/sun.png";
 import moon from "../../assets/images/moon.png";
 import { useState, useEffect } from "react";
 
-export default function Header({ visible }) {
+export default function Header({ visible, darkMode, setDarkMode }) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
-  const [mode, setMode] = useState(false);
 
   useEffect(() => {
     if (visible == false) {
@@ -19,7 +18,7 @@ export default function Header({ visible }) {
   }, [visible]);
 
   function changeMode() {
-    setMode(!mode);
+    setDarkMode(!darkMode);
   }
 
   function menuClick() {
@@ -48,7 +47,7 @@ export default function Header({ visible }) {
         <div className="header__mode">
           <img
             className="header__mode-image"
-            src={mode === false ? sun : moon}
+            src={darkMode === false ? sun : moon}
             onClick={changeMode}
           ></img>
         </div>

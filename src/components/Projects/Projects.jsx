@@ -5,7 +5,7 @@ import gameRecImage from "../../assets/images/GameRec.png";
 import invoiceImage from "../../assets/images/Invoice App Dark.png";
 import cilesiaLogo from "../../assets/images/cilesiaLogo.png";
 import gameRecLogo from "../../assets/images/gameRec-logo.png"
-import invoiceLogo from "../../assets/images/invoice-tracker-logo.png"
+import invoiceLogo from "../../assets/images/invoice-logo.png"
 import { useState } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "../ProjectCard/ProjectCard";

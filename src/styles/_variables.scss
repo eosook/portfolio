@@ -14,12 +14,47 @@ $padding-m: 1.25rem;
 $padding-l: 2rem;
 $padding-xl: 2.5rem;
 
-// Colours
+// Colors - Light Mode
 
-$primary-blue: #2782ce;
-$secondary-blue: #001f3f;
+// :root {
+//   --background: #eff5fb;
 
-$highlighted-blue: #dcf5ff;
+//   --primary: #3383da;
+//   --secondary: #76b0f0;
+//   --accent: #499df7;
+// }
 
-$button-primary: #2d00df;
-$button-secondary: #2d00df;
+// [data-theme="dark"] {
+//   --background: #001f3f;
+
+//   --primary: #2575cb;
+//   --secondary: #0f4a8a;
+//   --accent: #085bb5;
+// }
+
+:root {
+  --background: #fefbf6;
+
+  --primary: #f27f22;
+  --secondary: #dbb998;
+  --accent: #c37476;
+
+  --font-primary: #0e0801;
+}
+
+// Colors - Dark Mode
+
+[data-theme="dark"] {
+  --background: #090601;
+
+  --primary: #de6b0d;
+  --secondary: #664524;
+  --accent: #8b3c3e;
+
+  --font-primary: #fef8f1;
+}
+
+// Colors - CTA
+
+$button-primary: #dbb998;
+$button-secondary: #664524;

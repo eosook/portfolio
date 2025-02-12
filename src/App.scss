@@ -19,6 +19,7 @@ button{
 
 .portfolio{
   overflow: hidden;
+  background-color: var(--background);
   &__section{
     &-visible{
       opacity: 1;

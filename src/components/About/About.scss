@@ -8,7 +8,7 @@
   min-height: 400px;
   padding: 2rem;
   text-align: center;
-  background-image: linear-gradient(135deg, #001F3F, #0074D9);
+  background: var(--background);
   @include tablet {
     display: flex;
     align-items: center;
@@ -22,6 +22,17 @@
 
   &__container {
     margin-bottom: 4rem;
+  }
+  &__main{
+    background-color: var(--primary);
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: $padding-l $padding-xl;
+
+    @include tablet{
+      width: 400px;
+      height: 300px;
+    }
   }
   &__title {
     @include title(2rem, 500);
