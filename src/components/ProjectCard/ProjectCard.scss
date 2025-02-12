@@ -6,8 +6,8 @@
 $work-container-background: rgb(78, 217, 255);
 
 .project-card {
-  width: 300px;
-  height: 600px;
+  width: 400px;
+  height: 500px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -24,14 +24,24 @@ $work-container-background: rgb(78, 217, 255);
 
   @include tablet {
     padding: $padding-m;
+    width: 300px;
+    height: 600px;
   }
 
   &__expanded{
     padding: $padding-l;
   }
 
+  &__remove{
+    display: none;
+  }
+
   &__back-arrow{
     filter: brightness(0) invert(1);
+
+    &:hover{
+      cursor: pointer;
+    }
   }
 
   &__container{
@@ -39,19 +49,24 @@ $work-container-background: rgb(78, 217, 255);
   }
 
   &__content{
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    width: 550px;
+
+    @include tablet{
+      margin: -2rem auto 0;
+      justify-content: space-between;
+      gap: 2rem;
+      width: 550px;
+    }
   }
 
   &__title{
     @include title(1.5rem, 500);
+    font-family: $oswald-font;
+    margin-left: 0.5rem;
   }
 
   &__description{
-    @include body(1rem);
+    @include body(0.925rem);
     min-width: 300px;
     width: 300px;
   }
@@ -59,12 +74,18 @@ $work-container-background: rgb(78, 217, 255);
   &__logo {
     width: 80px;
     height: 80px;
+
+    @include tablet{
+      width: 120px;
+      height: 120px;
+    }
   }
 
   &__techs{
     margin: $margin-m auto 0;
     display: flex;
     gap: 1rem;
+    width: 550px;
 
     &--item{
       border: 1px solid black;
@@ -82,9 +103,19 @@ $work-container-background: rgb(78, 217, 255);
     border-radius: 16px;
 
     &-expanded{
-      width: 600px;
-      height: 400px;
-      margin-top: 2rem;
+
+      @include tablet{
+        width: 600px;
+        height: auto;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &__external{
+    width: 22px;
+    &:hover{
+      cursor: pointer;
     }
   }
 }

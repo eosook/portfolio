@@ -1,11 +1,12 @@
 import "./ProjectCard.scss";
 import leftArrow from "../../assets/images/left-arrow.png";
+import externalLink from "../../assets/images/external-link.png";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const cardVariants = {
+var cardVariants = {
   expanded: { width: "100vw", height: "600px", borderRadius: 16 },
-  collapsed: { width: "300px", height: "500px", borderRadius: 16 },
+  collapsed: { width: "200px", height: "200px", borderRadius: 16 },
 };
 
 export default function ProjectCard({
@@ -21,6 +22,53 @@ export default function ProjectCard({
   link,
 }) {
   const [showOtherCards, setShowOtherCards] = useState(true);
+  const [mobileAnimationComplete, setMobileAnimationComplete] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+  const isMobile = width <= 768;
+  const isTablet = width <= 1280;
+
+  function handleWindowChange() {
+    setWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (selectedWork !== projectNumber) {
+
+    }
+  }, [projectNumber])
+
+  useEffect(() => {
+    if (isMobile) {
+      cardVariants = {
+        expanded: { width: "100vw", height: "600px", borderRadius: 16 },
+        collapsed: { width: "200px", height: "200px", borderRadius: 16 },
+      };
+    } else if (isTablet) {
+      cardVariants = {
+        expanded: { width: "100vw", height: "600px", borderRadius: 16 },
+        collapsed: { width: "250px", height: "400px", borderRadius: 16 },
+      };
+    } else {
+      cardVariants = {
+        expanded: { width: "100vw", height: "600px", borderRadius: 16 },
+        collapsed: { width: "300px", height: "500px", borderRadius: 16 },
+      };
+    }
+  }, [width])
+
+  function linkTo(url) {
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) {
+      newWindow.opener = null;
+    }
+  }
 
   return (
     <AnimatePresence>
@@ -36,7 +84,6 @@ export default function ProjectCard({
           onClick={() => {
             if (selectedWork == projectNumber) {
               setShowOtherCards(false);
-              closeWork();
             } else {
               changeWork(projectNumber);
             }
@@ -45,7 +92,7 @@ export default function ProjectCard({
           initial={{ borderRadius: 16 }}
           animate={selectedWork == projectNumber ? "expanded" : "collapsed"}
           exit={{}}
-          transition={{ duration: 0.4, ease: "easeIn" }}
+          transition={{ duration: 0.25, ease: "easeIn" }}
           onAnimationComplete={() => {
             if (selectedWork !== projectNumber) {
               setShowOtherCards(true);
@@ -79,17 +126,22 @@ export default function ProjectCard({
                     src={logo}
                     alt="cilesia beauty bar logo"
                   ></img>
-                  <h2 className="project-card__title">{title}</h2>
+                  <h2 className="project-card__title">
+                    {title}{" "}
+                    <img
+                      src={externalLink}
+                      className="project-card__external"
+                      onClick={() => linkTo(link)}
+                    />
+                  </h2>
                 </div>
                 <p className="project-card__description">{description}</p>
               </div>
               <div className="project-card__techs">
                 {techs.map((tech) => {
                   return (
-                    <div className="project-card__techs--item">
-                      {tech}
-                    </div>
-                  )
+                    <div className="project-card__techs--item">{tech}</div>
+                  );
                 })}
               </div>
             </div>
@@ -97,7 +149,11 @@ export default function ProjectCard({
             ""
           )}
           <img
-            className={selectedWork == projectNumber ? "project-card__image project-card__image-expanded" : "project-card__image"}
+            className={
+              selectedWork == projectNumber
+                ? "project-card__image project-card__image-expanded"
+                : "project-card__image"
+            }
             src={image}
             alt="cilesia website image"
           ></img>
@@ -105,10 +161,13 @@ export default function ProjectCard({
       ) : showOtherCards ? (
         <motion.div
           key={projectNumber}
-          className="project-card"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          id="project-card"
+          className={mobileAnimationComplete ? "project-card project-card__remove" : "project-card"}
+          initial={{ scale: 1, opacity: 0, y: 0 }}
+          animate={{ scale: 0, opacity: 1, y: 0 }}
+          exit={{ scale: 1 }}
+          onAnimationComplete={() => setMobileAnimationComplete(true)}
+          transition={{ duration: 0.25, delay: 0.2 }}
         ></motion.div>
       ) : null}
     </AnimatePresence>

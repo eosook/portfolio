@@ -4,6 +4,8 @@ import cilesiaImage from "../../assets/images/Cilesia Website.png";
 import gameRecImage from "../../assets/images/GameRec.png";
 import invoiceImage from "../../assets/images/Invoice App Dark.png";
 import cilesiaLogo from "../../assets/images/cilesiaLogo.png";
+import gameRecLogo from "../../assets/images/gameRec-logo.png"
+import invoiceLogo from "../../assets/images/invoice-tracker-logo.png"
 import { useState } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "../ProjectCard/ProjectCard";
@@ -44,7 +46,7 @@ export default function Projects() {
           description={
             "I developed a full-stack web application designed to help users discover new games tailored to their preferences. The platform integrates with the IGDB API from Twitch to fetch detailed game information, while users can create personalized accounts, maintain wishlists, and explore game recommendations."
           }
-          logo={cilesiaLogo}
+          logo={gameRecLogo}
           image={gameRecImage}
           techs={[
             "React.js",
@@ -64,7 +66,7 @@ export default function Projects() {
           description={
             "I built this full-stack web application as a hands-on project to learn and apply TypeScript in a real-world scenario. The platform allows users to efficiently manage invoices by adding, editing, and deleting them while maintaining data consistency and type safety throughout the application."
           }
-          logo={cilesiaLogo}
+          logo={invoiceLogo}
           image={invoiceImage}
           techs={[
             "React.js",

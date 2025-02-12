@@ -21,10 +21,12 @@
   }
 
   &__section {
+    display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
     @include tablet {
-      display: flex;
       justify-content: center;
+      flex-wrap: nowrap;
       gap: 1rem;
     }
     @include desktop{
