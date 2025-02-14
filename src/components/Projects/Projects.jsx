@@ -8,7 +8,7 @@ import gameRecLogo from "../../assets/images/gameRec-logo.png"
 import invoiceLogo from "../../assets/images/invoice-logo.png"
 import { useState } from "react";
 import { motion } from "framer-motion";
-import ProjectCard from "../ProjectCard/ProjectCard";
+import ProjectCard from "./ProjectCard/ProjectCard";
 
 export default function Projects() {
   const [selectedWork, setSelectedWork] = useState(0);

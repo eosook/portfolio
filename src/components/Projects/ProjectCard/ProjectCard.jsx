@@ -1,8 +1,9 @@
 import "./ProjectCard.scss";
-import leftArrow from "../../assets/images/left-arrow.png";
-import externalLink from "../../assets/images/external-link.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import ProjectCardContent from "./ProjectCardContent";
+import ProjectCardImage from "./ProjectCardImage";
+import useWindowSize from "../../../hooks/useWindowSize";
 
 var cardVariants = {
   expanded: { width: "100vw", height: "600px", borderRadius: 16 },
@@ -23,26 +24,15 @@ export default function ProjectCard({
 }) {
   const [showOtherCards, setShowOtherCards] = useState(true);
   const [mobileAnimationComplete, setMobileAnimationComplete] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
+  const width = useWindowSize();
   const isMobile = width <= 768;
   const isTablet = width <= 1280;
-
-  function handleWindowChange() {
-    setWidth(window.innerWidth);
-  }
 
   function mobileClose() {
     if (isMobile) {
       setMobileAnimationComplete(true);
     }
   }
-
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowChange);
-    return () => {
-      window.removeEventListener("resize", handleWindowChange);
-    };
-  }, []);
 
   useEffect(() => {
     if (selectedWork == 0) {
@@ -78,23 +68,16 @@ export default function ProjectCard({
           height: "600px",
           borderRadius: 16,
           zIndex: 1,
+          position: ["absolute", "absolute", "relative"]
         },
         collapsed: {
           width: "300px",
           height: "500px",
           borderRadius: 16,
-          zIndex: 0,
         },
       };
     }
   }, [width]);
-
-  function linkTo(url) {
-    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
-    if (newWindow) {
-      newWindow.opener = null;
-    }
-  }
 
   return (
     <AnimatePresence>
@@ -119,7 +102,7 @@ export default function ProjectCard({
           animate={selectedWork == projectNumber ? "expanded" : "collapsed"}
           exit={{}}
           transition={{
-            duration: 0.5,
+            duration: 0.75,
             ease: "easeInOut",
             times: [0, 0.75, 1],
             delay: 0.25,
@@ -139,56 +122,19 @@ export default function ProjectCard({
           }
           whileTap={{ scale: 0.9 }}
         >
-          <img
-            className="project-card__logo"
-            src={logo}
-            alt="cilesia beauty bar logo"
-          ></img>
-          {selectedWork == projectNumber ? (
-            <div className="project-card__container">
-              <img
-                className="project-card__back-arrow"
-                src={leftArrow}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  closeWork();
-                }}
-              ></img>
-              <div className="project-card__content">
-                <div>
-                  <h2 className="project-card__title">
-                    {title}{" "}
-                    <img
-                      src={externalLink}
-                      className="project-card__external"
-                      onClick={() => linkTo(link)}
-                    />
-                  </h2>
-                </div>
-                <p className="project-card__description">{description}</p>
-              </div>
-              <div className="project-card__techs">
-                {techs.map((tech, index) => {
-                  return (
-                    <div key={index} className="project-card__techs--item">
-                      {tech}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          ) : (
-            ""
+          <img className="project-card__logo" src={logo} alt={`${title} logo`} />
+
+          {selectedWork === projectNumber && (
+            <ProjectCardContent
+              logo={logo}
+              title={title}
+              description={description}
+              techs={techs}
+              link={link}
+              closeWork={closeWork}
+            />
           )}
-          <img
-            className={
-              selectedWork == projectNumber
-                ? "project-card__image project-card__image-expanded"
-                : "project-card__image"
-            }
-            src={image}
-            alt="cilesia website image"
-          ></img>
+          <ProjectCardImage image={image} expanded={selectedWork === projectNumber} />
         </motion.div>
       ) : showOtherCards ? (
         <motion.div
