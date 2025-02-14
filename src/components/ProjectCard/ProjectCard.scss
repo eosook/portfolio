@@ -6,16 +6,12 @@
 $work-container-background: rgb(78, 217, 255);
 
 .project-card {
-  width: 400px;
-  height: 500px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
   padding: $padding-m;
   overflow: hidden;
   justify-content: space-between;
-  background-color: $work-container-background;
+  background-color: var(--primary);
   margin: 0 auto $margin-l;
+  border: 1px solid black;
 
   &:hover{
     width: 320px;
@@ -33,7 +29,7 @@ $work-container-background: rgb(78, 217, 255);
   }
 
   &__remove{
-    display: none;
+    
   }
 
   &__back-arrow{
@@ -42,10 +38,6 @@ $work-container-background: rgb(78, 217, 255);
     &:hover{
       cursor: pointer;
     }
-  }
-
-  &__container{
-    
   }
 
   &__content{
@@ -118,8 +110,4 @@ $work-container-background: rgb(78, 217, 255);
       cursor: pointer;
     }
   }
-}
-
-.project-card__remove{
-  display: none;
 }

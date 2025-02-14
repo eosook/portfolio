@@ -9,6 +9,7 @@
 
 .projects {
   background-color: #f2f2f2;
+  border: 2px solid black;
 
   @include tablet {
     padding: 0;
@@ -24,6 +25,7 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
+    border: 2px solid black;
     @include tablet {
       justify-content: center;
       flex-wrap: nowrap;

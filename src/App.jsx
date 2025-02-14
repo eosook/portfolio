@@ -18,7 +18,7 @@ function App() {
   }, [darkMode]);
   
   return (
-    <div class="portfolio" data-theme={darkMode ? "dark" : "light"}>
+    <div className="portfolio" data-theme={darkMode ? "dark" : "light"}>
       <Header visible={isVisible[0]} darkMode={darkMode} setDarkMode={setDarkMode}/>
       <div key={0} ref={refs[0]} className="portfolio__section-visible">
         <About />

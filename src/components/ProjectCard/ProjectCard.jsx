@@ -31,6 +31,12 @@ export default function ProjectCard({
     setWidth(window.innerWidth);
   }
 
+  function mobileClose() {
+    if (isMobile) {
+      setMobileAnimationComplete(true);
+    }
+  }
+
   useEffect(() => {
     window.addEventListener("resize", handleWindowChange);
     return () => {
@@ -39,10 +45,10 @@ export default function ProjectCard({
   }, []);
 
   useEffect(() => {
-    if (selectedWork !== projectNumber) {
-
+    if (selectedWork == 0) {
+      setMobileAnimationComplete(false);
     }
-  }, [projectNumber])
+  }, [selectedWork]);
 
   useEffect(() => {
     if (isMobile) {
@@ -52,16 +58,36 @@ export default function ProjectCard({
       };
     } else if (isTablet) {
       cardVariants = {
-        expanded: { width: "100vw", height: "600px", borderRadius: 16 },
-        collapsed: { width: "250px", height: "400px", borderRadius: 16 },
+        expanded: {
+          width: "100vw",
+          height: "600px",
+          borderRadius: 16,
+          zIndex: 1,
+        },
+        collapsed: {
+          width: "250px",
+          height: "400px",
+          borderRadius: 16,
+          zIndex: 0,
+        },
       };
     } else {
       cardVariants = {
-        expanded: { width: "100vw", height: "600px", borderRadius: 16 },
-        collapsed: { width: "300px", height: "500px", borderRadius: 16 },
+        expanded: {
+          width: ["300px", "600px", "1200px"],
+          height: "600px",
+          borderRadius: 16,
+          zIndex: 1,
+        },
+        collapsed: {
+          width: "300px",
+          height: "500px",
+          borderRadius: 16,
+          zIndex: 0,
+        },
       };
     }
-  }, [width])
+  }, [width]);
 
   function linkTo(url) {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
@@ -92,7 +118,12 @@ export default function ProjectCard({
           initial={{ borderRadius: 16 }}
           animate={selectedWork == projectNumber ? "expanded" : "collapsed"}
           exit={{}}
-          transition={{ duration: 0.25, ease: "easeIn" }}
+          transition={{
+            duration: 0.5,
+            ease: "easeInOut",
+            times: [0, 0.75, 1],
+            delay: 0.25,
+          }}
           onAnimationComplete={() => {
             if (selectedWork !== projectNumber) {
               setShowOtherCards(true);
@@ -103,12 +134,16 @@ export default function ProjectCard({
               ? {
                   scale: 1.05,
                   transition: { duration: 0.1 },
-                  border: "1px solid black",
                 }
               : ""
           }
           whileTap={{ scale: 0.9 }}
         >
+          <img
+            className="project-card__logo"
+            src={logo}
+            alt="cilesia beauty bar logo"
+          ></img>
           {selectedWork == projectNumber ? (
             <div className="project-card__container">
               <img
@@ -121,11 +156,6 @@ export default function ProjectCard({
               ></img>
               <div className="project-card__content">
                 <div>
-                  <img
-                    className="project-card__logo"
-                    src={logo}
-                    alt="cilesia beauty bar logo"
-                  ></img>
                   <h2 className="project-card__title">
                     {title}{" "}
                     <img
@@ -138,9 +168,11 @@ export default function ProjectCard({
                 <p className="project-card__description">{description}</p>
               </div>
               <div className="project-card__techs">
-                {techs.map((tech) => {
+                {techs.map((tech, index) => {
                   return (
-                    <div className="project-card__techs--item">{tech}</div>
+                    <div key={index} className="project-card__techs--item">
+                      {tech}
+                    </div>
                   );
                 })}
               </div>
@@ -162,12 +194,16 @@ export default function ProjectCard({
         <motion.div
           key={projectNumber}
           id="project-card"
-          className={mobileAnimationComplete ? "project-card project-card__remove" : "project-card"}
-          initial={{ scale: 1, opacity: 0, y: 0 }}
-          animate={{ scale: 0, opacity: 1, y: 0 }}
-          exit={{ scale: 1 }}
-          onAnimationComplete={() => setMobileAnimationComplete(true)}
-          transition={{ duration: 0.25, delay: 0.2 }}
+          className={
+            mobileAnimationComplete
+              ? "project-card project-card__remove"
+              : "project-card"
+          }
+          initial={{ scaleX: 1, scaleY: 1, opacity: 1 }}
+          animate={{ scaleX: 0, scaleY: 0.2, opacity: 1, display: "none" }}
+          exit={{ scaleX: 1, scaleY: 1, opacity: 1 }}
+          onAnimationComplete={() => mobileClose()}
+          transition={{ duration: 0.25 }}
         ></motion.div>
       ) : null}
     </AnimatePresence>
