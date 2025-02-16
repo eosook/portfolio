@@ -1,14 +1,17 @@
-@use "../../styles/fonts" as *;
-@use "../../styles/mixins" as *;
-@use "../../styles/animations" as *;
-@use "../../styles/variables" as *;
+@use "../../../styles/fonts" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/animations" as *;
+@use "../../../styles/variables" as *;
 
 .contact-form{
     &__input{
         width: 100%;
-        padding: 0.25rem 1rem;
+        padding: 0.75rem 1rem;
         margin: 1rem 0;
         font-size: 1rem;
+        border-radius: 8px;
+        border: none;
+        background-color: var(--secondary);
     }
     &__textarea{
         resize: none;
@@ -16,7 +19,7 @@
         padding: 0.5rem 1rem;
     }
     &__button{
-        padding: 1rem;
+        @include button;
     }
     &__success{
         display: block;

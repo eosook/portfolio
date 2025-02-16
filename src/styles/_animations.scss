@@ -24,7 +24,7 @@
   100% {
     margin: $margin-xl $margin-l;
     width: calc(100% - $margin-l * 2);
-    border-radius: 24px;
+    border-radius: $border-radius;
   }
 }
 
@@ -32,7 +32,7 @@
   0% {
     margin: $margin-xl $margin-xxl;
     width: calc(100% - $margin-xxl * 2);
-    border-radius: 24px;
+    border-radius: $border-radius;
   }
   100% {
     margin: 0;
@@ -50,7 +50,7 @@
   100% {
     margin: $margin-xl $margin-xxl;
     width: calc(100% - $margin-xxl * 2);
-    border-radius: 24px;
+    border-radius: $border-radius;
   }
 }
 

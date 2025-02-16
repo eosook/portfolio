@@ -8,16 +8,18 @@
 }
 
 .projects {
-  background-color: #f2f2f2;
-  border: 2px solid black;
+  @include componentPadding;
+  height: calc(100dvh - $header-height-mobile);
+  background-color: var(--background);
 
   @include tablet {
-    padding: 0;
+    height: calc(100dvh - $header-height-mobile);
   }
   &__header {
     @include header(2rem);
+    font-family: $oswald-font;
     text-align: center;
-    padding: 2rem;
+    padding: $padding-m;
     text-transform: uppercase;
   }
 

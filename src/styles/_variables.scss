@@ -1,4 +1,4 @@
-// margins/paddings
+// Margin
 
 $margin-xxs: 0.25rem;
 $margin-xs: 0.5rem;
@@ -8,53 +8,62 @@ $margin-l: 1.75rem;
 $margin-xl: 2.5rem;
 $margin-xxl: 6rem;
 
+// Padding
+
 $padding-xs: 0.5rem;
 $padding-s: 0.75rem;
 $padding-m: 1.25rem;
 $padding-l: 2rem;
 $padding-xl: 2.5rem;
+$padding-xxl: 4rem;
 
 // Colors - Light Mode
 
-// :root {
-//   --background: #eff5fb;
-
-//   --primary: #3383da;
-//   --secondary: #76b0f0;
-//   --accent: #499df7;
-// }
-
-// [data-theme="dark"] {
-//   --background: #001f3f;
-
-//   --primary: #2575cb;
-//   --secondary: #0f4a8a;
-//   --accent: #085bb5;
-// }
-
 :root {
-  --background: #fefbf6;
+  --background: #eff5fb;
 
-  --primary: #f27f22;
-  --secondary: #dbb998;
-  --accent: #c37476;
-
-  --font-primary: #0e0801;
+  --primary: #3383da;
+  --secondary: #76b0f0;
+  --accent: #499df7;
 }
-
-// Colors - Dark Mode
 
 [data-theme="dark"] {
-  --background: #090601;
+  --background: #001f3f;
 
-  --primary: #de6b0d;
-  --secondary: #664524;
-  --accent: #8b3c3e;
-
-  --font-primary: #fef8f1;
+  --primary: #2575cb;
+  --secondary: #0f4a8a;
+  --accent: #085bb5;
 }
+
+// :root {
+//   --background: #fefbf6;
+
+//   --primary: #f27f22;
+//   --secondary: #dbb998;
+//   --accent: #c37476;
+
+//   --font-primary: #0e0801;
+// }
+
+// // Colors - Dark Mode
+
+// [data-theme="dark"] {
+//   --background: #090601;
+
+//   --primary: #de6b0d;
+//   --secondary: #664524;
+//   --accent: #8b3c3e;
+
+//   --font-primary: #fef8f1;
+// }
 
 // Colors - CTA
 
 $button-primary: #dbb998;
 $button-secondary: #664524;
+
+// Extras
+
+$border-radius: 16px;
+$header-height-mobile: 81px;
+$header-height: 102px;

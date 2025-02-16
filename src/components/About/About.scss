@@ -4,9 +4,9 @@
 @use "../../styles/variables" as *;
 
 .about {
-  height: 100vh;
+  @include componentPadding;
+  height: 100dvh;
   min-height: 400px;
-  padding: 2rem;
   text-align: center;
   background: var(--background);
   @include tablet {
@@ -26,7 +26,7 @@
   &__main{
     background-color: var(--primary);
     border: 1px solid black;
-    border-radius: 16px;
+    border-radius: $border-radius;
     padding: $padding-l $padding-xl;
 
     @include tablet{

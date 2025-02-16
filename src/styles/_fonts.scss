@@ -59,13 +59,8 @@
   font-weight: 500;
 }
 
-@font-face{
-  font-family: Montserrat;
-  src: url("../../assets/fonts/Montserrat-VariableFont_wght");
-}
-
 @mixin title($font-size, $weight){
-  font-family: $montserrat-font;
+  font-family: $poppins-font;
   font-size: $font-size;
   line-height: $font-size * 1.2;
   font-weight: $weight;
@@ -88,4 +83,3 @@
 $poppins-font: Poppins, Arial, Helvetica, sans-serif;
 $oswald-font: Oswald, Arial, Helvetica, sans-serif;
 $bodoni-font: Bodoni, Arial, Helvetica, sans-serif;
-$montserrat-font: Montserrat, Arial, Helvetica, sans-serif;

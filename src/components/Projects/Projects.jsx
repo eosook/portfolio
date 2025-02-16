@@ -1,5 +1,4 @@
 import "./Projects.scss";
-import Project from "../Project/Project";
 import cilesiaImage from "../../assets/images/Cilesia Website.png";
 import gameRecImage from "../../assets/images/GameRec.png";
 import invoiceImage from "../../assets/images/Invoice App Dark.png";
