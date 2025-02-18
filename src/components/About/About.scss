@@ -5,33 +5,54 @@
 
 .about {
   @include componentPadding;
-  height: 100dvh;
-  min-height: 400px;
-  text-align: center;
+  min-height: 100dvh;
   background: var(--background);
   @include tablet {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row-reverse;
-    gap: 4rem;
   }
-  @include desktop{
-    gap: 12rem;
+
+  &__wrapper {
+    @include tablet {
+      margin-top: -2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row-reverse;
+      gap: 4rem;
+      border-radius: $border-radius;
+      background-color: var(--secondary);
+      padding: 4rem 8rem;
+    }
+    @include desktop {
+      gap: 10rem;
+    }
   }
 
   &__container {
-    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
   }
-  &__main{
+  &__main {
     background-color: var(--primary);
     border: 1px solid black;
     border-radius: $border-radius;
     padding: $padding-l $padding-xl;
+    margin-top: 2rem;
 
-    @include tablet{
-      width: 400px;
-      height: 300px;
+    @include tablet {
+      min-width: 400px;
+      max-width: 600px;
+      margin-top: 0;
+    }
+  }
+  &__body {
+    @include body(1rem);
+    margin: 2px 0;
+
+    &:last-of-type {
+      margin-bottom: 3rem;
     }
   }
   &__title {
@@ -39,9 +60,100 @@
   }
   &__subtitle {
     @include title(1.5rem, 500);
+    margin-top: -4px;
+    margin-bottom: 0.75rem;
+    letter-spacing: 2px;
+  }
+  &__link {
+    position: relative;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover .about__link-text {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -10px);
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    &-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    &-wrapper{
+      display: flex;
+      gap: 1rem;
+    }
+    &-text {
+      @include header(0.825rem);
+      visibility: hidden;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--accent);
+      color: black;
+      box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+      padding: $padding-xs $padding-s;
+      border-radius: 4px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translate(-50%, -4px);
+      pointer-events: none;
+    }
+    &-logo {
+      width: 50px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &--github {
+      &:hover {
+        background-color: black;
+      }
+    }
+    &--linkedin {
+      &:hover {
+        background-color: #3383da;
+      }
+    }
+  }
+  &__button {
+    @include button;
+    text-transform: uppercase;
+    position: relative;
+    right: 0;
+    &:hover {
+      cursor: pointer;
+    }
   }
   &__image {
-    height: 400px;
-    border-radius: 100px;
+    display: inline-block;
+    height: 300px;
+    border-radius: 150px;
+    margin: 8rem auto 0;
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+}
+
+.github-logo {
+  &:hover {
+    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg)
+      brightness(95%) contrast(80%);
+  }
+}
+
+.linkedin-logo {
+  &:hover {
+    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg)
+      brightness(95%) contrast(80%);
   }
 }
