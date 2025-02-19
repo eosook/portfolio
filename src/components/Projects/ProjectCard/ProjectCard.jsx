@@ -44,13 +44,13 @@ export default function ProjectCard({
     if (isMobile) {
       cardVariants = {
         expanded: { width: "100vw", height: "600px", borderRadius: 16 },
-        collapsed: { width: "200px", height: "200px", borderRadius: 16 },
+        collapsed: { width: "160px", height: "160px", borderRadius: 16 },
       };
     } else if (isTablet) {
       cardVariants = {
         expanded: {
           width: "100vw",
-          height: "600px",
+          height: "700px",
           borderRadius: 16,
           zIndex: 1,
         },
@@ -65,7 +65,7 @@ export default function ProjectCard({
       cardVariants = {
         expanded: {
           width: ["300px", "600px", "1200px"],
-          height: "600px",
+          height: "700px",
           borderRadius: 16,
           zIndex: 1,
           position: ["absolute", "absolute", "relative"]

@@ -25,6 +25,8 @@ $padding-xxl: 4rem;
   --primary: #3383da;
   --secondary: #76b0f0;
   --accent: #499df7;
+
+  --font-primary: #0e0801;
 }
 
 [data-theme="dark"] {
@@ -33,6 +35,8 @@ $padding-xxl: 4rem;
   --primary: #2575cb;
   --secondary: #0f4a8a;
   --accent: #085bb5;
+
+  --font-primary: #fef8f1;
 }
 
 // :root {

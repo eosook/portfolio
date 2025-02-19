@@ -8,12 +8,15 @@
 }
 
 .projects {
-  @include componentPadding;
+  margin-top: 2rem;
   height: calc(100dvh - $header-height-mobile);
+  min-height: 800px;
   background-color: var(--background);
+  border-top: 2px solid black;
 
   @include tablet {
-    height: calc(100dvh - $header-height-mobile);
+    @include componentPadding;
+    height: calc(100dvh);
   }
   &__header {
     @include header(2rem);
@@ -21,13 +24,13 @@
     text-align: center;
     padding: $padding-m;
     text-transform: uppercase;
+    color: var(--font-primary)
   }
 
   &__section {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    border: 2px solid black;
     @include tablet {
       justify-content: center;
       flex-wrap: nowrap;

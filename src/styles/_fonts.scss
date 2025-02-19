@@ -60,14 +60,14 @@
 }
 
 @mixin title($font-size, $weight){
-  font-family: $poppins-font;
+  font-family: $oswald-font;
   font-size: $font-size;
   line-height: $font-size * 1.2;
   font-weight: $weight;
 }
 
 @mixin header($font-size){
-  font-family: $poppins-font;
+  font-family: $oswald-font;
   font-size: $font-size;
   line-height: $font-size * 1.2;
   font-weight: 500;
