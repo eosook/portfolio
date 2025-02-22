@@ -20,7 +20,7 @@ export default function Projects() {
   }
   return (
     <div className="projects">
-      <div className="projects__header">Some of my work</div>
+      <div className="projects__header">Recent Projects</div>
       <div className="projects__section">
         <ProjectCard
           projectNumber={1}

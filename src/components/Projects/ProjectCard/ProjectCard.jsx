@@ -29,6 +29,7 @@ export default function ProjectCard({
   const isTablet = width <= 1280;
 
   function mobileClose() {
+    console.log("hi");
     if (isMobile) {
       setMobileAnimationComplete(true);
     }
@@ -43,7 +44,12 @@ export default function ProjectCard({
   useEffect(() => {
     if (isMobile) {
       cardVariants = {
-        expanded: { width: "100vw", height: "600px", borderRadius: 16 },
+        expanded: {
+          width: "100vw",
+          height: "600px",
+          borderRadius: 48,
+          position: ["relative", "absolute", "relative"],
+        },
         collapsed: { width: "160px", height: "160px", borderRadius: 16 },
       };
     } else if (isTablet) {
@@ -51,7 +57,7 @@ export default function ProjectCard({
         expanded: {
           width: "100vw",
           height: "700px",
-          borderRadius: 16,
+          borderRadius: 48,
           zIndex: 1,
         },
         collapsed: {
@@ -66,14 +72,15 @@ export default function ProjectCard({
         expanded: {
           width: ["300px", "600px", "1200px"],
           height: "700px",
-          borderRadius: 16,
+          borderRadius: 48,
           zIndex: 1,
-          position: ["absolute", "absolute", "relative"]
+          position: ["relative", "absolute", "relative"],
         },
         collapsed: {
           width: "300px",
           height: "500px",
           borderRadius: 16,
+          position: "relative",
         },
       };
     }
@@ -92,20 +99,19 @@ export default function ProjectCard({
           layout
           onClick={() => {
             if (selectedWork == projectNumber) {
-              setShowOtherCards(false);
+              setShowOtherCards(true);
             } else {
               changeWork(projectNumber);
             }
           }}
           variants={cardVariants}
-          initial={{ borderRadius: 16 }}
+          initial={{  }}
           animate={selectedWork == projectNumber ? "expanded" : "collapsed"}
           exit={{}}
           transition={{
-            duration: 0.75,
-            ease: "easeInOut",
-            times: [0, 0.75, 1],
-            delay: 0.25,
+            visualDuration: 0.75,
+            times: [0, 0.5, 1],
+            delay: 0.25
           }}
           onAnimationComplete={() => {
             if (selectedWork !== projectNumber) {
@@ -115,14 +121,20 @@ export default function ProjectCard({
           whileHover={
             selectedWork !== projectNumber
               ? {
-                  scale: 1.05,
-                  transition: { duration: 0.1 },
+                  scale: 1.1,
+                  transition: { type: "spring", bounce: 0.5, duration: 0.3 },
+                  borderRadius: 48,
+                  border: "2px solid blue"
                 }
               : ""
           }
           whileTap={{ scale: 0.9 }}
         >
-          <img className="project-card__logo" src={logo} alt={`${title} logo`} />
+          <img
+            className="project-card__logo"
+            src={logo}
+            alt={`${title} logo`}
+          />
 
           {selectedWork === projectNumber && (
             <ProjectCardContent
@@ -134,22 +146,25 @@ export default function ProjectCard({
               closeWork={closeWork}
             />
           )}
-          <ProjectCardImage image={image} expanded={selectedWork === projectNumber} />
+          <ProjectCardImage
+            image={image}
+            expanded={selectedWork === projectNumber}
+          />
         </motion.div>
       ) : showOtherCards ? (
         <motion.div
-          key={projectNumber}
+          key={`card-${projectNumber}`} 
           id="project-card"
           className={
             mobileAnimationComplete
               ? "project-card project-card__remove"
               : "project-card"
           }
-          initial={{ scaleX: 1, scaleY: 1, opacity: 1 }}
-          animate={{ scaleX: 0, scaleY: 0.2, opacity: 1, display: "none" }}
-          exit={{ scaleX: 1, scaleY: 1, opacity: 1 }}
+          initial={{ scale: 1, opacity: 1, padding: 0 }}
+          animate={{ scale: 0, display: "none", opacity: 0, padding: 0 }}
+          exit={{ }} 
           onAnimationComplete={() => mobileClose()}
-          transition={{ duration: 0.25 }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
         ></motion.div>
       ) : null}
     </AnimatePresence>
