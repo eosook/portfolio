@@ -6,7 +6,6 @@ import cilesiaLogo from "../../assets/images/cilesiaLogo.png";
 import gameRecLogo from "../../assets/images/gameRec-logo.png"
 import invoiceLogo from "../../assets/images/invoice-logo.png"
 import { useState } from "react";
-import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard/ProjectCard";
 
 export default function Projects() {

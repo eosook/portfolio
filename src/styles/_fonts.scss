@@ -1,3 +1,16 @@
+// MEDIA QUERIES
+@mixin tabletFont {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktopFont {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
 @font-face {
   font-family: Poppins;
   src: url("../../assets/fonts/Poppins-Light.ttf");
@@ -78,6 +91,24 @@
   font-size: $font-size;
   line-height: $font-size * 1.4;
   font-weight: 400;
+}
+
+@mixin sectionTitle(){
+  font-family: $oswald-font;
+  font-size: 3rem;
+  line-height: 3.6rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  @include tabletFont{
+    font-size: 4rem;
+    line-height: 4.8rem;
+    margin-bottom: 4rem;
+  }
+  @include desktopFont{
+    font-size: 5rem;
+    line-height: 6rem;
+    margin-bottom: 4rem;
+  }
 }
 
 $poppins-font: Poppins, Arial, Helvetica, sans-serif;

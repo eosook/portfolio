@@ -7,8 +7,14 @@
     text-align: center;
     padding: 2rem;
     border: 2px solid black;
+    min-height: 600px;
+    @include tablet{
+        min-height: 800px;
+        padding: 2.5rem;
+    }
     &__title{
-        @include title(2rem, 500);
+        @include sectionTitle();
+        color: var(--font-primary);
     }
     &__subtitle{
         @include title(1.5rem, 500);
@@ -19,19 +25,14 @@
         flex-wrap: wrap;
         gap: 1.5rem;
         justify-content: center;
-    }
-    &__item{
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        border: 1px solid black;
-        border-radius: 16px;
-        padding: 1rem;
-    }
-    &__image{
-        width: 24px;
-    }
-    &__name{
-        @include title(1rem, 500);
+        max-width: 1000px;
+        justify-content: center;
+        margin: 0 auto;
+        background-color: var(--primary);
+        padding: 4rem 2rem;
+        border-radius: $border-radius;
+        @include tablet{
+            padding: 4rem;
+        }
     }
 }

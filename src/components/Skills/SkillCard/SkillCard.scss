@@ -1,0 +1,37 @@
+@use "../../../styles/fonts" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/animations" as *;
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid black;
+  border-radius: 16px;
+  padding: 0.75rem;
+  background-color: var(--secondary);
+
+  @include tablet{
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  &__image {
+    width: 24px;
+
+    @include tablet{
+      width: 36px;
+    }
+  }
+  &__name {
+    @include title(1rem, 500);
+    color: var(--font-primary);
+    @include tablet{
+      @include title(1.25rem, 500);
+    }
+  }
+}

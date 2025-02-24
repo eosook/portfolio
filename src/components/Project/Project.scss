@@ -20,7 +20,7 @@
         }
     }
     &__title{
-        @include title(2rem, 500);
+        @include sectionTitle();
     }
     &__description{
         @include body(1rem);
