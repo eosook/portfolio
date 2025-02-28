@@ -21,7 +21,6 @@
       flex-direction: row-reverse;
       gap: 4rem;
       border-radius: $border-radius;
-      background-color: var(--secondary);
       padding: 4rem 8rem;
     }
     @include desktop {
@@ -35,15 +34,21 @@
   }
   &__main {
     background-color: var(--primary);
-    border: 1px solid black;
+    border: 1px solid color-mix(in srgb, var(--primary) 80%, black);
     border-radius: $border-radius;
     padding: $padding-l $padding-xl;
     margin-top: 2rem;
+    box-shadow: 5px 5px 10px color-mix(in srgb, var(--primary) 60%, black);
 
     @include tablet {
       min-width: 400px;
       max-width: 600px;
       margin-top: 0;
+    }
+    @include desktop{
+      min-width: 400px;
+      max-width: 800px;
+      padding: 3rem 6rem;
     }
   }
   &__body {

@@ -11,7 +11,7 @@
   margin-top: 2rem;
   height: calc(100dvh - $header-height-mobile);
   min-height: 800px;
-  background-color: var(--background);
+  background-color: rgba(var(--background), 0.3);
   border-top: 2px solid black;
   padding: 2rem 1rem;
 
@@ -21,9 +21,7 @@
   }
   &__header {
     @include sectionTitle;
-    font-family: $oswald-font;
     text-align: center;
-    text-transform: uppercase;
     color: var(--font-primary);
 
     @include tablet{

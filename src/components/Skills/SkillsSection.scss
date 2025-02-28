@@ -6,7 +6,6 @@
 .skills{
     text-align: center;
     padding: 2rem;
-    border: 2px solid black;
     min-height: 600px;
     @include tablet{
         min-height: 800px;
@@ -31,6 +30,7 @@
         background-color: var(--primary);
         padding: 4rem 2rem;
         border-radius: $border-radius;
+        box-shadow: 5px 5px 5px var(--shadow);
         @include tablet{
             padding: 4rem;
         }

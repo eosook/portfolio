@@ -12,9 +12,9 @@
   z-index: 2;
   padding: $padding-s $padding-xs;
   margin: $margin-xl $margin-l;
-  border: 1px solid black;
+  border: 1px solid color-mix(in srgb, var(--header) 80%, black);
   border-radius: $border-radius;
-  background-color: var(--accent);
+  background-color: var(--header);
   
 
   @include tablet {
@@ -62,8 +62,7 @@
     }
 
     &-item {
-      font-family: $oswald-font;
-      font-size: 1.5rem;
+      @include header(1.5rem);
       color: var(--font-primary);
       border-bottom: 3px solid transparent;
 
@@ -73,8 +72,21 @@
 
       &:hover {
         cursor: pointer;
-        color: var(--secondary);
-        border-bottom: 3px solid var(--secondary);
+        color: var(--font-primary);
+        border-bottom: 3px solid var(--font-primary);
+      }
+    }
+    &-home{
+      @include title(1.5rem, 500);
+      color: var(--font-home);
+      border-bottom: 3px solid transparent;
+      &::after{
+        content: '';
+      }
+      &:hover {
+        cursor: pointer;
+        color: var(--font-home);
+        border-bottom: 3px solid var(--font-home);
       }
     }
   }
@@ -97,7 +109,6 @@
     }
     &-button {
       @include button;
-      background-color: $button-primary;
     }
   }
 

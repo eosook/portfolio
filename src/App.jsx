@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="portfolio" data-theme={darkMode ? "dark" : "light"}>
       <Header visible={isVisible[0]} darkMode={darkMode} setDarkMode={setDarkMode}/>
-      <div key={0} ref={refs[0]} className="portfolio__section-visible">
+      <div key={0} ref={refs[0]} className="portfolio__section-visible" id="home">
         <About />
       </div>
       <Projects />

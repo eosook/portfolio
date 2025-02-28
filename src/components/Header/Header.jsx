@@ -25,6 +25,10 @@ export default function Header({ visible, darkMode, setDarkMode }) {
     setOpenMenu(!openMenu);
   }
 
+  const sendTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div
       className={
@@ -39,9 +43,9 @@ export default function Header({ visible, darkMode, setDarkMode }) {
         <img src={logo} className="header__logo-image"></img>
       </div>
       <ul className="header__list">
-        <li className="header__list-item">About</li>
-        <li className="header__list-item">Projects</li>
-        <li className="header__list-item">Skills</li>
+        <li className="header__list-home" onClick={() => sendTo("home")}>Home</li>
+        <li className="header__list-item" onClick={() => sendTo("projects")}>Projects</li>
+        <li className="header__list-item" onClick={() => sendTo("skills")}>Skills</li>
       </ul>
       <div className="header__right-container">
         <div className="header__mode">
@@ -52,7 +56,7 @@ export default function Header({ visible, darkMode, setDarkMode }) {
           ></img>
         </div>
         <div className="header__contact">
-          <button className="header__contact-button">Contact</button>
+          <button className="header__contact-button" onClick={() => sendTo("contact")}>Contact</button>
         </div>
         <div className="header__menu">
           <img

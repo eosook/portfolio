@@ -18,7 +18,7 @@ export default function Projects() {
     setSelectedWork(0);
   }
   return (
-    <div className="projects">
+    <div className="projects" id="projects">
       <div className="projects__header">Recent Projects</div>
       <div className="projects__section">
         <ProjectCard

@@ -15,7 +15,7 @@ import viteLogo from "../../assets/images/vite-logo.png"
 
 export default function Skills(){
     return (
-        <div className="skills">
+        <div id="skills" className="skills">
             <h2 className="skills__title">Tools of the Trade</h2>
             <h3 className="skills__subtitle"></h3>
             <div className="skills__list">
