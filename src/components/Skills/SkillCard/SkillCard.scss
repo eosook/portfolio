@@ -8,8 +8,8 @@
   gap: 0.25rem;
   border: 1px solid black;
   border-radius: 16px;
-  padding: 0.75rem;
-  background-color: var(--secondary);
+  padding: 0.5rem;
+  background-color: var(--primary);
 
   @include tablet{
     gap: 0.5rem;
@@ -28,7 +28,7 @@
     }
   }
   &__name {
-    @include title(1rem, 500);
+    @include title(0.825rem, 500);
     color: var(--font-primary);
     @include tablet{
       @include title(1.25rem, 500);

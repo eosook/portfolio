@@ -25,8 +25,8 @@ export default function ProjectCard({
   const [showOtherCards, setShowOtherCards] = useState(true);
   const [mobileAnimationComplete, setMobileAnimationComplete] = useState(false);
   const width = useWindowSize();
-  const isMobile = width <= 768;
-  const isTablet = width <= 1280;
+  const isMobile = width < 768;
+  const isTablet = width < 1280;
 
   function mobileClose() {
     console.log("hi");
@@ -78,7 +78,7 @@ export default function ProjectCard({
         },
         collapsed: {
           width: "300px",
-          height: "500px",
+          height: "550px",
           borderRadius: 16,
           position: "relative",
         },
@@ -124,7 +124,7 @@ export default function ProjectCard({
                   scale: 1.1,
                   transition: { type: "spring", bounce: 0.5, duration: 0.3 },
                   borderRadius: 48,
-                  border: "2px solid blue"
+                  border: "2px solid color-mix(in srgb, var(--primary) 60%, black)"
                 }
               : ""
           }

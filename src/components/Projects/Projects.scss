@@ -9,15 +9,15 @@
 
 .projects {
   margin-top: 2rem;
-  height: calc(100dvh - $header-height-mobile);
-  min-height: 800px;
+  height: 100%;
+  min-height: calc(100dvh - $header-height-mobile);
   background-color: rgba(var(--background), 0.3);
   border-top: 2px solid black;
   padding: 2rem 1rem;
 
   @include tablet {
-    @include componentPadding;
     height: calc(100dvh);
+    padding: 8rem 4rem;
   }
   &__header {
     @include sectionTitle;
