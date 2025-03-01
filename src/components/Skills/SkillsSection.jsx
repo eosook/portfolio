@@ -29,8 +29,8 @@ export default function Skills() {
           <li className="skills-categories__item" onClick={() => changeSkill("all")}>All</li>
           <li className="skills-categories__item" onClick={() => changeSkill("framework")}>Frameworks</li>
           <li className="skills-categories__item" onClick={() => changeSkill("language")}>Languages</li>
+          <li className="skills-categories__item" onClick={() => changeSkill("database")}>Databases</li>
           <li className="skills-categories__item" onClick={() => changeSkill("tool")}>Tools</li>
-          <li className="skills-categories__item" onClick={() => changeSkill("other")}>Others</li>
         </ul>
       </div>
       <div className="skills__list">
@@ -41,7 +41,7 @@ export default function Skills() {
         <SkillCard logo={cssLogo} name={"CSS"} type={"language"} currentSkill={currentSkill}/>
         <SkillCard logo={sassLogo} name={"SASS"} type={"language"} currentSkill={currentSkill}/>
         <SkillCard logo={nodeLogo} name={"Node.js"} type={"framework"} currentSkill={currentSkill}/>
-        <SkillCard logo={mysqlLogo} name={"MySQL"} type={"others"} currentSkill={currentSkill}/>
+        <SkillCard logo={mysqlLogo} name={"MySQL"} type={"database"} currentSkill={currentSkill}/>
         <SkillCard logo={githubLogo} name={"Github"} type={"tool"} currentSkill={currentSkill}/>
         <SkillCard logo={gitLogo} name={"Git"} type={"tool"} currentSkill={currentSkill}/>
         <SkillCard logo={vscodeLogo} name={"VSCode"} type={"tool"} currentSkill={currentSkill}/>
