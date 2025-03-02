@@ -33,7 +33,7 @@ export default function ContactForm() {
         required
       ></textarea>
       <button className="contact-form__button" type="submit">
-        SUBMIT
+        send
       </button>
       <h3 className={messageSent ? "contact-form__success" : "contact-form__false"}>Your message has been sent!</h3>
     </form>

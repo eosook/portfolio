@@ -4,19 +4,37 @@
 @use "../../styles/variables" as *;
 
 .contact{
-    @include componentPadding;
     @include componentMargin;
-    border: 1px solid var(--primary);
-    background-color: var(--primary);
+    border: 1px solid color-mix(in srgb, var(--tertiary) 80%, black);
+    // box-shadow: 5px 5px 5px color-mix(in srgb, var(--tertiary) 80%, black);
+    background-color: var(--tertiary);
     border-radius: $border-radius;
+    text-align: center;
+    padding: 2rem 1rem;
     @include tablet{
-        width: 800px;
+        width: 700px;
         margin: 4rem auto;
+        padding: 2rem 4rem;
+    }
+    &__subtitle{
+        @include title(1.75rem, 400);
+        @include tablet{
+            @include title(2rem, 400);
+        }
     }
     &__title{
         @include title(2rem, 500);
+        @include tablet{
+            @include title(2.5rem, 500);
+            margin-top: -0.5rem;
+        }
     }
-    &__body{
-        @include title(1.5rem, 400);
+    &__email{
+        @include body(1rem);
+        margin-bottom: 1rem;
+        color: rgb(74, 74, 74);
+        @include tablet{
+            @include body(1.25rem);
+        }
     }
 }

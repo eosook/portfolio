@@ -54,6 +54,7 @@
 
   &__list {
     display: none;
+    margin-left: 10rem;
 
     @include tablet{
       display: flex;
