@@ -18,7 +18,7 @@ export default function Footer() {
         <h2 className="footer__name">Eo Soo Kim</h2>
       </div>
       <div className="footer__section footer__links">
-        <img className="footer__link" src={githubLogo} alt="github logo" onClick={() => sendTo("https://github.com/eosook")}></img>
+        <img className="footer__link footer__link--github" src={githubLogo} alt="github logo" onClick={() => sendTo("https://github.com/eosook")}></img>
         <img className="footer__link" src={linkedInLogo} alt="linkedIn logo"  onClick={() => sendTo("https://www.linkedin.com/in/eosoo/")}></img>
       </div>
     </div>

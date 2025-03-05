@@ -38,7 +38,7 @@
     border-radius: $border-radius;
     padding: $padding-l $padding-xl;
     margin-top: 2rem;
-    box-shadow: 5px 5px 10px color-mix(in srgb, var(--primary) 60%, black);
+    box-shadow: 0px 5px 10px color-mix(in srgb, var(--primary) 60%, black);
 
     @include tablet {
       min-width: 400px;
@@ -152,6 +152,7 @@
     height: 300px;
     border-radius: 150px;
     margin: 8rem auto 0;
+    box-shadow: 0px 0px 20px rgb(187, 178, 178);
 
     @include tablet {
       margin-top: 0;

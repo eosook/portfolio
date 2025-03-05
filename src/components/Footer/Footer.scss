@@ -4,15 +4,21 @@
 @use "../../styles/variables" as *;
 
 .footer{
-    border: 2px solid black;
-    padding: 2rem 6rem;
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
+    background-color: var(--secondary);
+    @include tablet{
+        padding: 2rem 6rem;
+    }
 
     &__section{
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 0.5rem;
+        @include tablet{
+            gap: 1rem;
+        }
     }
     &__copyright{
         border: 1px solid black;
@@ -24,9 +30,26 @@
         justify-content: center;
     }
     &__name{
-        @include title(2rem, 400);
+        @include title(1.5rem, 400);
     }
     &__link{
+        position: relative;
+        top: 0;
+        width: 40px;
         cursor: pointer;
+        transition: top ease 0.2s;
+        @include tablet{
+            width: 60px;
+        }
+        &:hover{
+            top: -10px;
+        }
+
+        &--github{
+            width: 34px;
+            @include tablet{
+                width: 50px;
+            }
+        }
     }
 }

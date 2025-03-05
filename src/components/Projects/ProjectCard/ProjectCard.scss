@@ -14,7 +14,7 @@ $work-container-background: rgb(78, 217, 255);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 5px 5px 5px color-mix(in srgb, var(--primary) 60%, black);
+  box-shadow: 0px 5px 10px color-mix(in srgb, var(--primary) 60%, black);
 
   &__expanded{
     padding: $padding-l;
