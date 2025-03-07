@@ -52,18 +52,32 @@
     }
   }
 
+  &__logo{
+    height: 40px;
+    width: 40px;
+    &-image{
+      position: relative;
+      top: -20px;
+      width: 80px;
+      height: 80px;
+    }
+  }
+
   &__list {
     display: none;
-    margin-left: 10rem;
 
     @include tablet{
       display: flex;
       list-style-type: none;
+      gap: 2rem;
+    }
+    @include desktop{
       gap: 4rem;
+      margin-left: 10rem;
     }
 
     &-item {
-      @include header(1.5rem);
+      @include header(1.25rem);
       color: var(--font-primary);
       border-bottom: 3px solid transparent;
 
@@ -76,9 +90,13 @@
         color: var(--font-primary);
         border-bottom: 3px solid var(--font-primary);
       }
+
+      @include desktop{
+        @include title(1.5rem, 500);
+      }
     }
     &-home{
-      @include title(1.5rem, 500);
+      @include title(1.25rem, 500);
       color: var(--font-home);
       border-bottom: 3px solid transparent;
       &::after{
@@ -88,6 +106,9 @@
         cursor: pointer;
         color: var(--font-home);
         border-bottom: 3px solid var(--font-home);
+      }
+      @include desktop{
+        @include title(1.5rem, 500);
       }
     }
   }

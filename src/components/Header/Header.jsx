@@ -1,5 +1,5 @@
 import "./Header.scss";
-import logo from "../../assets/images/javascript-logo.png";
+import logo from "../../assets/images/ek-logo-transparent.png";
 import menuLogo from "../../assets/images/menu.gif";
 import menuOpen from "../../assets/images/menu-open.png";
 import menuClose from "../../assets/images/menu-close.png";
