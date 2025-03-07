@@ -12,7 +12,7 @@
   z-index: 2;
   padding: $padding-s $padding-xs;
   margin: $margin-xl $margin-l;
-  border: 1px solid color-mix(in srgb, var(--header) 80%, black);
+  border-bottom: 1px solid color-mix(in srgb, var(--header) 80%, black);
   border-radius: $border-radius;
   background-color: var(--header);
   
@@ -124,13 +124,50 @@
       display: none;
     }
 
+    &:hover{
+      cursor: pointer;
+    }
+
     &-image{
       height: 28px;
       width: 28px;
+    }
+  }
 
+  &__dropdown-menu{
+    position: absolute;
+    top: 9rem;
+    right: 1.5rem;
+    z-index: 0;
+    @include tablet{
+      display: none;
+    }
+  }
+
+  &__dropdown-list{
+    list-style-type: none;
+    background-color: var(--header);
+    border-radius: 16px;
+
+    &-item{
+      @include title(1rem, 400);
+      padding: 1rem;
+      
       &:hover{
         cursor: pointer;
       }
+    }
+
+    &-arrow{
+      position: absolute;
+      top: -6px;
+      right: 0.25rem;
+      width: 0px;
+      height: 0px;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+  
+      border-bottom: 15px solid var(--header);
     }
   }
 }
