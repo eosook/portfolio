@@ -5,10 +5,7 @@ import ProjectCardContent from "./ProjectCardContent";
 import ProjectCardImage from "./ProjectCardImage";
 import useWindowSize from "../../../hooks/useWindowSize";
 
-var cardVariants = {
-  expanded: { width: "100vw", height: "600px", borderRadius: 16 },
-  collapsed: { width: "200px", height: "200px", borderRadius: 16 },
-};
+var cardVariants = {};
 
 export default function ProjectCard({
   projectNumber,
@@ -56,7 +53,7 @@ export default function ProjectCard({
       cardVariants = {
         expanded: {
           width: "100vw",
-          height: "700px",
+          height: "600px",
           borderRadius: 48,
           zIndex: 1,
         },
@@ -71,14 +68,14 @@ export default function ProjectCard({
       cardVariants = {
         expanded: {
           width: ["300px", "600px", "1200px"],
-          height: "700px",
+          height: "600px",
           borderRadius: 48,
           zIndex: 1,
           position: ["relative", "absolute", "relative"],
         },
         collapsed: {
           width: "300px",
-          height: "550px",
+          height: "500px",
           borderRadius: 16,
           position: "relative",
         },

@@ -40,7 +40,7 @@ export default function About() {
           <div className="about__link-container">
             <div className="about__link-wrapper">
               <div className="about__link about__link--github">
-                <span className="about__link-text">Github</span>
+                <span className="about__link-text about__link-text-github">Github</span>
                 <img
                   className="about__link-logo github-logo"
                   src={githubLogo}
@@ -48,7 +48,7 @@ export default function About() {
                 />
               </div>
               <div className="about__link about__link--linkedin">
-                <span className="about__link-text">LinkedIn</span>
+                <span className="about__link-text about__link-text-linkedin">LinkedIn</span>
                 <img
                   className="about__link-logo linkedin-logo"
                   src={linkedInLogo}

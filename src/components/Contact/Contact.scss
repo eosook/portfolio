@@ -5,12 +5,13 @@
 
 .contact{
     @include componentMargin;
-    border: 1px solid color-mix(in srgb, var(--tertiary) 80%, black);
-    box-shadow: 0px 5px 10px color-mix(in srgb, var(--tertiary) 80%, black);
-    background-color: var(--tertiary);
+    border: 1px solid color-mix(in srgb, var(--primary) 80%, black);
+    box-shadow: 0px 5px 10px color-mix(in srgb, var(--primary) 80%, black);
+    background-color: var(--primary);
     border-radius: $border-radius;
     text-align: center;
     padding: 2rem 1rem;
+    margin-bottom: 4rem;
     @include tablet{
         width: 700px;
         margin: 4rem auto;

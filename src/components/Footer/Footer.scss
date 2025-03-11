@@ -30,7 +30,7 @@
         justify-content: center;
     }
     &__name{
-        @include title(1.5rem, 400);
+        @include title(1.125rem, 400);
     }
     &__link{
         position: relative;

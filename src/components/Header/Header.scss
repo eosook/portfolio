@@ -70,10 +70,10 @@
       display: flex;
       list-style-type: none;
       gap: 2rem;
+      margin: 0 1rem 0 3rem;
     }
     @include desktop{
       gap: 4rem;
-      margin-left: 10rem;
     }
 
     &-item {

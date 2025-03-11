@@ -15,15 +15,15 @@
 
   &__wrapper {
     @include tablet {
+      padding-top: 8rem;
+    }
+    @include desktop {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: row-reverse;
-      gap: 4rem;
       border-radius: $border-radius;
       padding: 4rem 8rem;
-    }
-    @include desktop {
       gap: 10rem;
     }
   }
@@ -42,8 +42,8 @@
 
     @include tablet {
       min-width: 400px;
-      max-width: 600px;
-      margin-top: 0;
+      max-width: 800px;
+      margin-top: 2rem;
     }
     @include desktop{
       min-width: 400px;
@@ -53,7 +53,7 @@
   }
   &__body {
     @include body(1rem);
-    margin: 2px 0;
+    margin: 0.25rem 0;
 
     &:last-of-type {
       margin-bottom: 3rem;
@@ -63,7 +63,7 @@
     @include title(2rem, 500);
   }
   &__subtitle {
-    @include title(1.5rem, 500);
+    @include title(1.25rem, 500);
     margin-top: -4px;
     margin-bottom: 0.75rem;
     letter-spacing: 2px;
@@ -108,8 +108,6 @@
       bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
-      background-color: var(--accent);
-      color: black;
       box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
       padding: $padding-xs $padding-s;
       border-radius: 4px;
@@ -117,6 +115,14 @@
       opacity: 0;
       transform: translate(-50%, -4px);
       pointer-events: none;
+      &-github{
+        background-color: var(--background-white);
+        color: black;
+      }
+      &-linkedin{
+        background-color: white;
+        color: #0077B5;
+      }
     }
     &-logo {
       width: 30px;
@@ -162,14 +168,12 @@
 
 .github-logo {
   &:hover {
-    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg)
-      brightness(95%) contrast(80%);
+    filter: invert(1);
   }
 }
 
 .linkedin-logo {
   &:hover {
-    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg)
-      brightness(95%) contrast(80%);
+    filter: invert(1) grayscale(100%) brightness(150%) contrast(150%);
   }
 }

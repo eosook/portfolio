@@ -5,9 +5,8 @@
 
 .skills{
     text-align: center;
-    padding: 1rem;
+    padding: 6rem 1rem;
     min-height: 600px;
-    border-bottom: 2px solid black;
     @include tablet{
         min-height: calc(100dvh - $header-height-mobile);
         padding: 8rem 2.5rem;
@@ -34,7 +33,7 @@
             }
         }
         &__item{
-            @include header(1.25rem);
+            @include header(1rem);
             padding-bottom: 1rem;
             border-bottom: 2px solid transparent;
             color: var(--font-primary);
@@ -55,9 +54,9 @@
         max-width: 1000px;
         justify-content: center;
         margin: 0 auto;
-        // background-color: var(--primary);
         padding: 2rem;
         border-radius: $border-radius;
+        // background-color: var(--primary);
         // box-shadow: 5px 5px 5px color-mix(in srgb, var(--primary) 60%, black);
         @include tablet{
             padding: 2rem;
