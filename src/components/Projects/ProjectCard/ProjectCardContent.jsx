@@ -22,15 +22,22 @@ export default function ProjectCardContent({
         alt="Back"
       />
       <div className="project-card__content">
-        <h2 className="project-card__title">
-          {title}{" "}
+        <div className="project-card__content-top">
           <img
-            src={externalLink}
-            className="project-card__external"
-            onClick={() => openLink(link)}
-            alt="Open"
+            className="project-card__logo"
+            src={logo}
+            alt={`${title} logo`}
           />
-        </h2>
+          <h2 className="project-card__title">
+            {title}{" "}
+            <img
+              src={externalLink}
+              className="project-card__external"
+              onClick={() => openLink(link)}
+              alt="Open"
+            />
+          </h2>
+        </div>
         <p className="project-card__description">{description}</p>
       </div>
 

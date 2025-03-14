@@ -26,7 +26,6 @@ export default function ProjectCard({
   const isTablet = width < 1280;
 
   function mobileClose() {
-    console.log("hi");
     if (isMobile) {
       setMobileAnimationComplete(true);
     }
@@ -44,7 +43,7 @@ export default function ProjectCard({
         expanded: {
           width: "100vw",
           height: "600px",
-          borderRadius: 48,
+          borderRadius: 24,
           position: ["relative", "absolute", "relative"],
         },
         collapsed: { width: "160px", height: "160px", borderRadius: 16 },
@@ -67,7 +66,7 @@ export default function ProjectCard({
     } else {
       cardVariants = {
         expanded: {
-          width: ["300px", "600px", "1200px"],
+          width: ["300px", "600px", "1000px"],
           height: "600px",
           borderRadius: 48,
           zIndex: 1,
@@ -102,13 +101,13 @@ export default function ProjectCard({
             }
           }}
           variants={cardVariants}
-          initial={{  }}
+          initial={{}}
           animate={selectedWork == projectNumber ? "expanded" : "collapsed"}
           exit={{}}
           transition={{
             visualDuration: 0.75,
             times: [0, 0.5, 1],
-            delay: 0.25
+            delay: 0.25,
           }}
           onAnimationComplete={() => {
             if (selectedWork !== projectNumber) {
@@ -121,45 +120,54 @@ export default function ProjectCard({
                   scale: 1.1,
                   transition: { type: "spring", bounce: 0.5, duration: 0.3 },
                   borderRadius: 48,
-                  border: "2px solid color-mix(in srgb, var(--primary) 60%, black)"
+                  border:
+                    "2px solid color-mix(in srgb, var(--primary) 60%, black)",
                 }
               : ""
           }
           whileTap={{ scale: 0.9 }}
         >
           <img
-            className="project-card__logo"
+            className={
+              selectedWork == projectNumber
+                ? "project-card__logo project-card__logo--remove"
+                : "project-card__logo"
+            }
             src={logo}
             alt={`${title} logo`}
           />
-
-          {selectedWork === projectNumber && (
-            <ProjectCardContent
-              logo={logo}
-              title={title}
-              description={description}
-              techs={techs}
-              link={link}
-              closeWork={closeWork}
+          <div className="project-card__wrapper">
+            {selectedWork === projectNumber && (
+              <ProjectCardContent
+                logo={logo}
+                title={title}
+                description={description}
+                techs={techs}
+                link={link}
+                closeWork={closeWork}
+              />
+            )}
+            <ProjectCardImage
+              image={image}
+              expanded={selectedWork === projectNumber}
+              isMobile={isMobile}
+              isTablet={isTablet}
             />
-          )}
-          <ProjectCardImage
-            image={image}
-            expanded={selectedWork === projectNumber}
-          />
+          </div>
         </motion.div>
       ) : showOtherCards ? (
         <motion.div
-          key={`card-${projectNumber}`} 
+          key={`card-${projectNumber}`}
           id="project-card"
           className={
             mobileAnimationComplete
               ? "project-card project-card__remove"
               : "project-card"
           }
-          initial={{ scale: 1, opacity: 1, padding: 0 }}
-          animate={{ scale: 0, display: "none", opacity: 0, padding: 0 }}
-          exit={{ }} 
+          layout
+          initial={{ scale: 0, opacity: 1, padding: 0 }}
+          animate={{ scale: 1, display: "none", opacity: 0, padding: 0 }}
+          exit={{scale: 0, display: "none", opacity: 0, padding: 0}}
           onAnimationComplete={() => mobileClose()}
           transition={{ duration: 0.25, ease: "easeInOut" }}
         ></motion.div>
