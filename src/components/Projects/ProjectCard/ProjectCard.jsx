@@ -41,12 +41,12 @@ export default function ProjectCard({
     if (isMobile) {
       cardVariants = {
         expanded: {
-          width: "100vw",
+          width: "85dvw",
           height: "600px",
           borderRadius: 24,
           position: ["relative", "absolute", "relative"],
         },
-        collapsed: { width: "160px", height: "160px", borderRadius: 16 },
+        collapsed: { width: "90%", height: "150px", borderRadius: 16 },
       };
     } else if (isTablet) {
       cardVariants = {
@@ -74,7 +74,7 @@ export default function ProjectCard({
         },
         collapsed: {
           width: "300px",
-          height: "500px",
+          height: "550px",
           borderRadius: 16,
           position: "relative",
         },
@@ -101,9 +101,9 @@ export default function ProjectCard({
             }
           }}
           variants={cardVariants}
-          initial={{}}
+          initial={{ }}
           animate={selectedWork == projectNumber ? "expanded" : "collapsed"}
-          exit={{}}
+          exit={{ }}
           transition={{
             visualDuration: 0.75,
             times: [0, 0.5, 1],
@@ -125,7 +125,7 @@ export default function ProjectCard({
                 }
               : ""
           }
-          whileTap={{ scale: 0.9 }}
+          whileTap={{ scale: 0.95 }}
         >
           <img
             className={
@@ -165,9 +165,9 @@ export default function ProjectCard({
               : "project-card"
           }
           layout
-          initial={{ scale: 0, opacity: 1, padding: 0 }}
-          animate={{ scale: 1, display: "none", opacity: 0, padding: 0 }}
-          exit={{scale: 0, display: "none", opacity: 0, padding: 0}}
+          initial={{ scale: 1, opacity: 1, padding: 0 }}
+          animate={{ scale: 1, opacity: 0, padding: 0, display: "none" }}
+          exit={{}}
           onAnimationComplete={() => mobileClose()}
           transition={{ duration: 0.25, ease: "easeInOut" }}
         ></motion.div>

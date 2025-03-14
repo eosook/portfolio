@@ -15,6 +15,11 @@ $work-container-background: rgb(78, 217, 255);
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0px 5px 10px color-mix(in srgb, var(--primary) 60%, black);
+  overflow: hidden;
+
+  @include tablet{
+    margin: 0 auto;
+  }
 
   &__expanded{
     padding: $padding-l;
@@ -25,13 +30,14 @@ $work-container-background: rgb(78, 217, 255);
   }
 
   &__remove{
+    display: none;
     padding: 0; 
     margin: 0;
   }
   &__back-arrow{
     filter: brightness(0) invert(1);
     display: block;
-    margin: -52px 0 32px;
+    margin: 0 0 -48px;
 
     @include tablet{
       margin: 0 0 -24px ;
@@ -101,7 +107,15 @@ $work-container-background: rgb(78, 217, 255);
       width: 120px;
       height: 120px;
     }
+    @include desktop{
+      width: 180px;
+      height: 180px;
+    }
 
+    &--expanded{
+      width: 120px;
+      height: 120px;
+    }
     &--remove{
       display: none;
     }
@@ -135,11 +149,16 @@ $work-container-background: rgb(78, 217, 255);
     height: 180px;
     border-radius: 16px;
     margin: 0 auto;
+    display: none;
+    @include tablet{
+      display: block;
+    }
 
     &-expanded{
       margin: 2rem auto 0;
       width: 100%;
       height: auto;
+      display: block;
 
       @include tablet{
         width: 550px;

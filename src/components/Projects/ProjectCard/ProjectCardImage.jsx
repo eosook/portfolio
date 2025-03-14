@@ -8,11 +8,11 @@ export default function ProjectCardImage({ image, expanded, isMobile, isTablet }
 
   if(isMobile){
     imageAnimation = {
-      moveUp: { translateY: -150, transition: { type: "spring", dampness: 0.2, bounce: 0.25, duration: 0.5 } },
+      moveUp: { translateY: -220, transition: { type: "spring", dampness: 0.2, bounce: 0.25, duration: 0.5 } },
     }
   } else if (isTablet){
     imageAnimation = {
-      moveUp: { translateY: -300, transition: { type: "spring", dampness: 0.2, bounce: 0.25, duration: 0.5 } },
+      moveUp: { translateY: -330, transition: { type: "spring", dampness: 0.2, bounce: 0.25, duration: 0.5 } },
     }
   } else {
     imageAnimation = {

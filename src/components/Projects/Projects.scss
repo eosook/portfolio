@@ -14,32 +14,37 @@
   padding: 6rem 1rem 2rem;
 
   @include tablet {
-    height: calc(100dvh);
+    min-height: calc(100dvh);
     padding: 8rem 4rem;
   }
   &__header {
     @include sectionTitle;
     text-align: center;
     color: var(--font-primary);
-
-    @include tablet{
-    }
-    @include desktop{
-    }
   }
 
   &__section {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    align-self: center;
+    justify-self: center;
     margin: 0 auto;
     gap: 1rem;
+    padding: 1rem;
     @include tablet {
-      flex-wrap: nowrap;
-      gap: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 2rem;
+      gap: 2rem;
     }
     @include desktop{
-        gap: 2rem;
-        max-width: 1400px;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: nowrap;
+      max-width: 1400px;
     }
   }
 

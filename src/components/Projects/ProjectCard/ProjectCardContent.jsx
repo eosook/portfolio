@@ -24,7 +24,7 @@ export default function ProjectCardContent({
       <div className="project-card__content">
         <div className="project-card__content-top">
           <img
-            className="project-card__logo"
+            className="project-card__logo project-card__logo--expanded"
             src={logo}
             alt={`${title} logo`}
           />
