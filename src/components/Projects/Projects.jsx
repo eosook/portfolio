@@ -2,9 +2,11 @@ import "./Projects.scss";
 import cilesiaImage from "../../assets/images/Cilesia Website.png";
 import gameRecImage from "../../assets/images/GameRec.png";
 import invoiceImage from "../../assets/images/Invoice App Dark.png";
+import instockImage from "../../assets/images/Instock-2.png";
 import cilesiaLogo from "../../assets/images/cilesiaLogo.png";
-import gameRecLogo from "../../assets/images/gameRec-logo.png"
-import invoiceLogo from "../../assets/images/invoice-logo.png"
+import gameRecLogo from "../../assets/images/gameRec-logo.png";
+import invoiceLogo from "../../assets/images/invoice-logo.png";
+import instockLogo from "../../assets/images/InStock-Logo.png";
 import { useState } from "react";
 import ProjectCard from "./ProjectCard/ProjectCard";
 
@@ -76,18 +78,17 @@ export default function Projects() {
         />
         <ProjectCard
           projectNumber={4}
-          title={"Invoice Tracker"}
+          title={"Instock"}
           changeWork={changeWork}
           closeWork={closeWork}
           selectedWork={selectedWork}
           description={
             "I built this full-stack web application as a hands-on project to learn and apply TypeScript in a real-world scenario. The platform allows users to efficiently manage invoices by adding, editing, and deleting them while maintaining data consistency and type safety throughout the application."
           }
-          logo={cilesiaLogo}
-          image={invoiceImage}
+          logo={instockLogo}
+          image={instockImage}
           techs={[
             "React.js",
-            "TypeScript",
             "Node.js",
             "Full-Stack Development",
           ]}

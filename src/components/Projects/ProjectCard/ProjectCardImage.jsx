@@ -12,11 +12,11 @@ export default function ProjectCardImage({ image, expanded, isMobile, isTablet }
     }
   } else if (isTablet){
     imageAnimation = {
-      moveUp: { translateY: -330, transition: { type: "spring", dampness: 0.2, bounce: 0.25, duration: 0.5 } },
+      moveUp: { translateY: -300, scale: 1.2, transition: { type: "spring", dampness: 0.2, bounce: 0.25, duration: 0.5 } },
     }
   } else {
     imageAnimation = {
-      moveUp: { translateY: -300, transition: { type: "spring", dampness: 0.2, bounce: 0.25, duration: 0.5 } },
+      moveUp: { translateY: -300, scale: 1.2, transition: { type: "spring", dampness: 0.2, bounce: 0.25, duration: 0.5 } },
     }
   }
   function moveImage(){
@@ -34,7 +34,7 @@ export default function ProjectCardImage({ image, expanded, isMobile, isTablet }
       onClick={moveImage}
       variants={imageAnimation}
       animate={imageClicked ? expanded ? 'moveUp' : { translateY: -30 }: ""}
-      whileHover={{ scale: 1.05 }}
+      // whileHover={{ scale: 1.05 }}
       src={image}
       alt="Project Screenshot"
     />

@@ -101,9 +101,9 @@ export default function ProjectCard({
             }
           }}
           variants={cardVariants}
-          initial={{ }}
+          initial={{}}
           animate={selectedWork == projectNumber ? "expanded" : "collapsed"}
-          exit={{ }}
+          exit={{}}
           transition={{
             visualDuration: 0.75,
             times: [0, 0.5, 1],
@@ -127,6 +127,9 @@ export default function ProjectCard({
           }
           whileTap={{ scale: 0.95 }}
         >
+          <motion.div>
+            
+          </motion.div>
           <img
             className={
               selectedWork == projectNumber
@@ -136,6 +139,15 @@ export default function ProjectCard({
             src={logo}
             alt={`${title} logo`}
           />
+          <h2
+            className={
+              selectedWork == projectNumber
+                ? "project-card__title--collapsed project-card__title--remove"
+                : "project-card__title--collapsed"
+            }
+          >
+            {title}
+          </h2>
           <div className="project-card__wrapper">
             {selectedWork === projectNumber && (
               <ProjectCardContent
