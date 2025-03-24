@@ -85,6 +85,7 @@ export default function Projects() {
           description={
             "A full-stack application designed to manage warehouse databases and track stock efficiently. Users can add, edit, and delete warehouses and inventory items in real time. Built collaboratively with three other developers."
           }
+          logo={instockLogo}
           image={instockImage}
           techs={[
             "React.js",

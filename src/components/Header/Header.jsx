@@ -27,7 +27,7 @@ export default function Header({ visible, darkMode, setDarkMode }) {
     setOpenMenu(!openMenu);
   }
 
-  const sendTo = (id) => {
+  const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setOpenMenu(false);
   };
@@ -46,13 +46,13 @@ export default function Header({ visible, darkMode, setDarkMode }) {
         <img src={logo} className="header__logo-image"></img>
       </div>
       <ul className="header__list">
-        <li className="header__list-home" onClick={() => sendTo("home")}>
+        <li className="header__list-home" onClick={() => scrollTo("home")}>
           Home
         </li>
-        <li className="header__list-item" onClick={() => sendTo("projects")}>
+        <li className="header__list-item" onClick={() => scrollTo("projects")}>
           Projects
         </li>
-        <li className="header__list-item" onClick={() => sendTo("skills")}>
+        <li className="header__list-item" onClick={() => scrollTo("skills")}>
           Skills
         </li>
       </ul>
@@ -67,7 +67,7 @@ export default function Header({ visible, darkMode, setDarkMode }) {
         <div className="header__contact">
           <button
             className="header__contact-button"
-            onClick={() => sendTo("contact")}
+            onClick={() => scrollTo("contact")}
           >
             Contact
           </button>
@@ -96,7 +96,7 @@ export default function Header({ visible, darkMode, setDarkMode }) {
                   <motion.li
                     key={item}
                     className="header__dropdown-list-item"
-                    onClick={() => sendTo(item)}
+                    onClick={() => scrollTo(item)}
                     whileHover={{ scale: 1.1, color: "white" }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >

@@ -7,6 +7,7 @@ import Skills from "./components/Skills/SkillsSection";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import visibleOnScreen from "./observer";
+import Lenis from "lenis";
 
 function App() {
   const refs = [useRef()];
@@ -16,6 +17,15 @@ function App() {
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
   }, [darkMode]);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+    function raf(time){
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }, [])
   
   return (
     <div className="portfolio" data-theme={darkMode ? "dark" : "light"}>

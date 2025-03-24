@@ -10,6 +10,10 @@ export default function About() {
       newWindow.opener = null;
     }
   }
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setOpenMenu(false);
+  };
   return (
     <div className="about">
       <div className="about__wrapper">
@@ -57,7 +61,7 @@ export default function About() {
               </div>
             </div>
 
-            <button className="about__button">Connect</button>
+            <button className="about__button" onClick={() => scrollTo("contact")}>Connect</button>
           </div>
         </div>
       </div>

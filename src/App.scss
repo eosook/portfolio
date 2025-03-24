@@ -13,27 +13,45 @@
   font-family: $poppins-font;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: 1px solid rgb(0, 0, 255);
 }
 
-button{
+button {
   cursor: pointer;
 }
 
-.portfolio{
+.portfolio {
   overflow: hidden;
   background-color: var(--background);
-  &__section{
-    &-visible{
+  &__section {
+    &-visible {
       opacity: 1;
-    } 
-    &-invisible{
+    }
+    &-invisible {
       opacity: 0;
     }
   }
 }
 
-.remove__scroll{
+.remove__scroll {
   overflow: hidden;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
