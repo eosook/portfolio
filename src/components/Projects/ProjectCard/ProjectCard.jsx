@@ -70,13 +70,11 @@ export default function ProjectCard({
           height: "600px",
           borderRadius: 48,
           zIndex: 1,
-          position: ["relative", "absolute", "relative"],
         },
         collapsed: {
           width: "300px",
           height: "550px",
           borderRadius: 16,
-          position: "relative",
         },
       };
     }

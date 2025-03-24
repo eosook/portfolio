@@ -63,6 +63,9 @@ $work-container-background: rgb(78, 217, 255);
     @include tablet{
       max-width: 100%;
     }
+    @include desktop{
+      min-height: 300px;
+    }
   }
 
   &__content{
@@ -180,6 +183,10 @@ $work-container-background: rgb(78, 217, 255);
         width: 550px;
         height: 450px;
         margin-top: 2rem;
+      }
+      @include desktop{
+        width: 550px;
+        height: 450px;
       }
       &:hover{
         cursor: pointer;

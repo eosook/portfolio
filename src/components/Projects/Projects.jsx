@@ -83,14 +83,14 @@ export default function Projects() {
           closeWork={closeWork}
           selectedWork={selectedWork}
           description={
-            "I built this full-stack web application as a hands-on project to learn and apply TypeScript in a real-world scenario. The platform allows users to efficiently manage invoices by adding, editing, and deleting them while maintaining data consistency and type safety throughout the application."
+            "A full-stack application designed to manage warehouse databases and track stock efficiently. Users can add, edit, and delete warehouses and inventory items in real time. Built collaboratively with three other developers."
           }
-          logo={instockLogo}
           image={instockImage}
           techs={[
             "React.js",
             "Node.js",
             "Full-Stack Development",
+            "Collaborative"
           ]}
           link={"https://cilesiabeautybar.com/"}
         />
