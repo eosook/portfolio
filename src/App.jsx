@@ -10,7 +10,7 @@ import visibleOnScreen from "./observer";
 import Lenis from "lenis";
 
 function App() {
-  const refs = [useRef()];
+  const refs = [useRef(), useRef()];
   const isVisible = visibleOnScreen(refs);
   const [darkMode, setDarkMode] = useState(false);
 
@@ -26,6 +26,10 @@ function App() {
     }
     requestAnimationFrame(raf);
   }, [])
+
+  useEffect(() => {
+    console.log(isVisible[1]);
+  }, isVisible[1])
   
   return (
     <div className="portfolio" data-theme={darkMode ? "dark" : "light"}>
@@ -33,7 +37,9 @@ function App() {
       <div key={0} ref={refs[0]} className="portfolio__section-visible" id="home">
         <About />
       </div>
-      <Projects />
+      <div key={1} ref={refs[1]}>
+        <Projects visible={isVisible[1]}/>
+      </div>
       <Skills />
       <Contact />
       <Footer />

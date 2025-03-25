@@ -44,7 +44,6 @@ export default function ProjectCard({
           width: "85dvw",
           height: "600px",
           borderRadius: 24,
-          position: ["relative", "absolute", "relative"],
         },
         collapsed: { width: "90%", height: "150px", borderRadius: 16 },
       };
@@ -66,7 +65,7 @@ export default function ProjectCard({
     } else {
       cardVariants = {
         expanded: {
-          width: ["300px", "600px", "1000px"],
+          width: "1000px",
           height: "600px",
           borderRadius: 48,
           zIndex: 1,
@@ -103,9 +102,7 @@ export default function ProjectCard({
           animate={selectedWork == projectNumber ? "expanded" : "collapsed"}
           exit={{}}
           transition={{
-            visualDuration: 0.75,
-            times: [0, 0.5, 1],
-            delay: 0.25,
+            duration: 0.25,
           }}
           onAnimationComplete={() => {
             if (selectedWork !== projectNumber) {
@@ -117,9 +114,9 @@ export default function ProjectCard({
               ? {
                   scale: 1.1,
                   transition: { type: "spring", bounce: 0.5, duration: 0.3 },
-                  borderRadius: 48,
+                  borderRadius: isMobile ? 36 : 48 ,
                   border:
-                    "2px solid color-mix(in srgb, var(--primary) 60%, black)",
+                    "2px solid color-mix(in srgb, var(--tertiary) 60%, black)",
                 }
               : ""
           }

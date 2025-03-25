@@ -9,12 +9,12 @@ $work-container-background: rgb(78, 217, 255);
   padding: $padding-m;
   overflow: hidden;
   justify-content: space-between;
-  background-color: var(--primary);
+  background-color: var(--tertiary);
   margin: 0 auto 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0px 5px 10px color-mix(in srgb, var(--primary) 60%, black);
+  box-shadow: 0px 5px 10px color-mix(in srgb, var(--tertiary) 60%, black);
   overflow: hidden;
 
   @include tablet{

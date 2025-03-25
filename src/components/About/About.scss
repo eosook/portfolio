@@ -7,6 +7,8 @@
   @include componentPadding;
   min-height: 100dvh;
   background: var(--background);
+  // background: linear-gradient(135deg, #759a6e 45%, white 45%, white 48%, var(--background) 48%);
+  // border-bottom: 80px solid #759a6e;
   @include tablet {
     display: flex;
     align-items: center;

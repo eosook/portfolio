@@ -16,7 +16,7 @@ export default function visibleOnScreen(refs, rootMargin = "0px") {
         },
         {
           rootMargin,
-          threshold: 0.9,
+          threshold: 0.6,
         }
       );
   

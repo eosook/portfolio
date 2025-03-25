@@ -7,6 +7,8 @@
     text-align: center;
     padding: 6rem 1rem;
     min-height: 600px;
+    // background: linear-gradient(135deg, #83c4e8 45%, white 45%, white 48%, var(--background) 48%);
+    // border-bottom: 80px solid #83c4e8;
     @include tablet{
         min-height: calc(100dvh - $header-height-mobile);
         padding: 8rem 2.5rem;
