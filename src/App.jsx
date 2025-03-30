@@ -57,7 +57,6 @@ function App() {
 
         <motion.div
           id="skills"
-          className="skills"
           key={2}
           ref={refs[2]}
           initial={{ backgroundColor: "var(--background)", opacity: 0.6 }}
@@ -73,14 +72,15 @@ function App() {
         >
           <Skills />
         </motion.div>
+        
         <motion.div
-          id="skills"
-          className="skills"
-          key={2}
-          ref={refs[2]}
+          id="contact"
+          className="contact__section"
+          key={3}
+          ref={refs[3]}
           initial={{ backgroundColor: "var(--background)", opacity: 0.6 }}
           animate={
-            isVisible[2]
+            isVisible[3]
               ? {
                   backgroundColor: "var(--background)",
                   opacity: 1,

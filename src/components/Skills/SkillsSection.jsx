@@ -22,7 +22,7 @@ export default function Skills() {
   }
 
   return (
-    <div>
+    <div className="skills">
       <h2 className="skills__title">Tools of the Trade</h2>
       <div className="skills-categories">
         <ul className="skills-categories__list">

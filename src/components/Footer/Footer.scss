@@ -7,7 +7,8 @@
     padding: 2rem;
     display: flex;
     justify-content: space-between;
-    background-color: var(--secondary);
+    background-color: var(--tertiary);
+    border-top: 1px dotted grey;
     @include tablet{
         padding: 2rem 6rem;
     }

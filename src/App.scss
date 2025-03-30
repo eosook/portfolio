@@ -15,7 +15,7 @@
 
 input:focus,
 textarea:focus {
-  outline: 1px solid rgb(0, 0, 255);
+  outline: 1px solid color-mix(in srgb, var(--tertiary) 50%, black);
 }
 
 button {
