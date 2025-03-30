@@ -45,7 +45,7 @@ export default function ProjectCard({
           height: "600px",
           borderRadius: 24,
         },
-        collapsed: { width: "90%", height: "150px", borderRadius: 16 },
+        collapsed: { width: "90%", height: "150px", borderRadius: 16, position: "relative" },
       };
     } else if (isTablet) {
       cardVariants = {
