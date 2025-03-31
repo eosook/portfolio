@@ -21,6 +21,7 @@
     width: calc(100% - $margin-xxl * 2);
     padding: $padding-m $padding-xl;
     margin: $margin-xl $margin-xxl;
+    height: 100px;
   }
 
   &__reverse{
@@ -39,6 +40,7 @@
 
     @include tablet{
       animation: 0.25s ease-in 0s expand;
+      height: 80px;
     }
   }
 

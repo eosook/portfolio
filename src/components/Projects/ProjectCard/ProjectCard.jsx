@@ -1,6 +1,6 @@
 import "./ProjectCard.scss";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import ProjectCardContent from "./ProjectCardContent";
 import ProjectCardImage from "./ProjectCardImage";
 import useWindowSize from "../../../hooks/useWindowSize";
@@ -19,23 +19,9 @@ export default function ProjectCard({
   techs,
   link,
 }) {
-  const [showOtherCards, setShowOtherCards] = useState(true);
-  const [mobileAnimationComplete, setMobileAnimationComplete] = useState(false);
   const width = useWindowSize();
   const isMobile = width < 768;
   const isTablet = width < 1280;
-
-  function mobileClose() {
-    if (isMobile) {
-      setMobileAnimationComplete(true);
-    }
-  }
-
-  useEffect(() => {
-    if (selectedWork == 0) {
-      setMobileAnimationComplete(false);
-    }
-  }, [selectedWork]);
 
   useEffect(() => {
     if (isMobile) {
@@ -57,7 +43,7 @@ export default function ProjectCard({
         },
         collapsed: {
           width: "250px",
-          height: "400px",
+          height: "250px",
           borderRadius: 16,
           zIndex: 0,
         },
@@ -102,7 +88,7 @@ export default function ProjectCard({
           animate={selectedWork == projectNumber ? "expanded" : "collapsed"}
           exit={{}}
           transition={{
-            duration: 0.25,
+            duration: 0.4,
           }}
           onAnimationComplete={() => {
             if (selectedWork !== projectNumber) {
@@ -162,22 +148,6 @@ export default function ProjectCard({
             />
           </div>
         </motion.div>
-      ) : showOtherCards ? (
-        <motion.div
-          key={`card-${projectNumber}`}
-          id="project-card"
-          className={
-            mobileAnimationComplete
-              ? "project-card project-card__remove"
-              : "project-card"
-          }
-          layout
-          initial={{ scale: 1, opacity: 1, padding: 0 }}
-          animate={{ scale: 1, opacity: 0, padding: 0, display: "none" }}
-          exit={{}}
-          onAnimationComplete={() => mobileClose()}
-          transition={{ duration: 0.25, ease: "easeInOut" }}
-        ></motion.div>
       ) : null}
     </AnimatePresence>
   );
