@@ -52,13 +52,13 @@ export default function ProjectCard({
       cardVariants = {
         expanded: {
           width: "1000px",
-          height: "600px",
+          height: "650px",
           borderRadius: 48,
           zIndex: 1,
         },
         collapsed: {
           width: "300px",
-          height: "550px",
+          height: "500px",
           borderRadius: 16,
         },
       };

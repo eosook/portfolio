@@ -8,14 +8,12 @@
 }
 
 .projects {
+  @include sectionMargin;
+  @include sectionPadding;
   height: 100%;
   min-height: 100dvh;
-  padding: 6rem 1rem 2rem;
   // background: linear-gradient(135deg, #b6a9ce 45%, white 45%, white 48%, var(--background) 48%);
   // border-bottom: 80px solid #b6a9ce;
-  @include tablet {
-    padding: 8rem 4rem;
-  }
   &__header {
     @include sectionTitle;
     text-align: center;
