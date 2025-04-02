@@ -21,7 +21,7 @@
     width: calc(100% - $margin-xxl * 2);
     padding: $padding-m $padding-xl;
     margin: $margin-xl $margin-xxl;
-    height: 100px;
+    height: 80px;
   }
 
   &__reverse{
@@ -72,7 +72,7 @@
       display: flex;
       list-style-type: none;
       gap: 2rem;
-      margin: 0 1rem 0 9rem;
+      margin: 0 1rem 0 4rem;
     }
     @include desktop{
       gap: 4rem;

@@ -91,19 +91,13 @@ $work-container-background: rgb(78, 217, 255);
     &--collapsed{
       display: none;
       @include tablet{
-        @include title(2rem, 400);
+        @include title(1.75rem, 500);
         display: block;
         margin: 0 auto;
         padding-bottom: 4rem;
         text-align: center;
+        color: rgb(46, 40, 40);
       }
-      // @include desktop{
-      //   @include title(2rem, 400);
-      //   display: block;
-      //   margin: 0 auto;
-      //   padding-bottom: 4rem;
-      //   text-align: center;
-      // }
     }
     &--remove{
       display: none;
@@ -132,10 +126,6 @@ $work-container-background: rgb(78, 217, 255);
     @include tablet{
       width: 120px;
       height: 120px;
-    }
-    @include desktop{
-      width: 180px;
-      height: 180px;
     }
 
     &--expanded{

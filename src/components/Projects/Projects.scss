@@ -35,13 +35,14 @@
       flex-wrap: wrap;
       padding: 2rem;
       gap: 2rem;
+      max-width: 800px;
     }
     @include desktop{
       display: flex;
       justify-content: center;
       gap: 2.5rem;
       flex-wrap: nowrap;
-      max-width: 1400px;
+      max-width: 1200px;
     }
   }
 
