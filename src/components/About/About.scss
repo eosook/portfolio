@@ -53,22 +53,25 @@
       padding: 3rem 6rem;
     }
   }
+  &__title {
+    @include title(1.625rem, 600);
+    
+  }
+  &__subtitle {
+    @include title(1.25rem, 500);
+    color: var(--font-secondary);
+    margin-top: 4px;
+    margin-bottom: 0.75rem;
+    letter-spacing: 2px;
+  }
   &__body {
     @include body(1rem);
+    font-weight: 500;
     margin: 0.25rem 0;
 
     &:last-of-type {
       margin-bottom: 3rem;
     }
-  }
-  &__title {
-    @include title(2rem, 500);
-  }
-  &__subtitle {
-    @include title(1.25rem, 500);
-    margin-top: -4px;
-    margin-bottom: 0.75rem;
-    letter-spacing: 2px;
   }
   &__link {
     position: relative;

@@ -51,14 +51,23 @@ $padding-xxl: 4rem;
   --tertiary: #9297C4;
   --accent: #E63946;
 
+  --skills: #be5544;
+  --skills-nav: #d8c28d;
+  --skills-card: #d0cb78;
+
+  --projects: #55b58c;
+  --projects-card: #9fd2bf;
+
   --font-primary: #0e0801;
+  --font-secondary: hsl(203, 23%, 34%);
+  --font-tertiary: hsl(203, 15%, 47%);
   --font-home: #1D3557;
 }
 
 // Colors - Dark Mode
 
 [data-theme="dark"] {
-  --background: #0a0f0e;
+  --background: #0e1312;
   --header: #39496c;
 
   --primary: #a6c9c3;
@@ -66,7 +75,16 @@ $padding-xxl: 4rem;
   --tertiary: #6cb1a5;
   --accent: #22577A;
 
+  --skills: #b95141;
+  --skills-nav: #725b27;
+  --skills-card: #888330;
+
+  --projects: #a6c9c3;
+  --projects-card: #374b75;
+
   --font-primary: #eff4f3;
+  --font-secondary: hsl(203, 23%, 34%);
+  --font-tertiary: hsl(203, 15%, 47%);
 }
 
 // Colors - CTA

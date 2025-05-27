@@ -6,14 +6,19 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  border: 1px solid var(--font-primary);
+  border: 1px solid black;
   border-radius: 16px;
   padding: 0.5rem;
-  background-color: var(--primary);
+  background-color: var(--skills-card);
+  min-width: 80px;
+  justify-content: center;
+  height: 42px;
 
   @include tablet{
     gap: 0.5rem;
     padding: 1rem;
+    min-width: 100px;
+    height: 70px;
   }
 
   &:hover{
@@ -28,10 +33,10 @@
     }
   }
   &__name {
-    @include title(0.825rem, 500);
+    @include title(0.825rem, 400);
     color: black;
     @include tablet{
-      @include title(1.25rem, 500);
+      @include title(1.125rem, 400);
     }
   }
 }

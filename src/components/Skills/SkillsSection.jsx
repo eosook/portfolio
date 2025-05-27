@@ -17,35 +17,123 @@ import { useState } from "react";
 export default function Skills() {
   const [currentSkill, setCurrentSkill] = useState("all");
 
-  function changeSkill(skill){
+  function changeSkill(skill) {
     setCurrentSkill(skill);
   }
 
   return (
     <div className="skills">
-      <h2 className="skills__title">Tools of the Trade</h2>
-      <div className="skills-categories">
-        <ul className="skills-categories__list">
-          <li className="skills-categories__item" onClick={() => changeSkill("all")}>All</li>
-          <li className="skills-categories__item" onClick={() => changeSkill("framework")}>Frameworks</li>
-          <li className="skills-categories__item" onClick={() => changeSkill("language")}>Languages</li>
-          <li className="skills-categories__item" onClick={() => changeSkill("database")}>Databases</li>
-          <li className="skills-categories__item" onClick={() => changeSkill("tool")}>Tools</li>
-        </ul>
-      </div>
-      <div className="skills__list">
-        <SkillCard logo={reactLogo} name={"React"} type={"framework"} currentSkill={currentSkill}/>
-        <SkillCard logo={htmlLogo} name={"HTML"} type={"language"} currentSkill={currentSkill}/>
-        <SkillCard logo={javascriptLogo} name={"JavaScript"} type={"language"} currentSkill={currentSkill}/>
-        <SkillCard logo={typescriptLogo} name={"TypeScript"} type={"language"} currentSkill={currentSkill}/>
-        <SkillCard logo={cssLogo} name={"CSS"} type={"language"} currentSkill={currentSkill}/>
-        <SkillCard logo={sassLogo} name={"SASS"} type={"language"} currentSkill={currentSkill}/>
-        <SkillCard logo={nodeLogo} name={"Node.js"} type={"framework"} currentSkill={currentSkill}/>
-        <SkillCard logo={mysqlLogo} name={"MySQL"} type={"database"} currentSkill={currentSkill}/>
-        <SkillCard logo={githubLogo} name={"Github"} type={"tool"} currentSkill={currentSkill}/>
-        <SkillCard logo={gitLogo} name={"Git"} type={"tool"} currentSkill={currentSkill}/>
-        <SkillCard logo={vscodeLogo} name={"VSCode"} type={"tool"} currentSkill={currentSkill}/>
-        <SkillCard logo={viteLogo} name={"Vite"} type={"tool"} currentSkill={currentSkill}/>
+      <div className="skills__container">
+        <h2 className="skills__title">Tools of the Trade</h2>
+
+        <div className="skills-categories">
+          <ul className="skills-categories__list">
+            <li
+              className="skills-categories__item"
+              onClick={() => changeSkill("all")}
+            >
+              All
+            </li>
+            <li
+              className="skills-categories__item"
+              onClick={() => changeSkill("framework")}
+            >
+              Frameworks
+            </li>
+            <li
+              className="skills-categories__item"
+              onClick={() => changeSkill("language")}
+            >
+              Languages
+            </li>
+            <li
+              className="skills-categories__item"
+              onClick={() => changeSkill("database")}
+            >
+              Databases
+            </li>
+            <li
+              className="skills-categories__item"
+              onClick={() => changeSkill("tool")}
+            >
+              Tools
+            </li>
+          </ul>
+        </div>
+        <div className="skills__list">
+          <SkillCard
+            logo={reactLogo}
+            name={"React"}
+            type={"framework"}
+            currentSkill={currentSkill}
+          />
+          <SkillCard
+            logo={htmlLogo}
+            name={"HTML"}
+            type={"language"}
+            currentSkill={currentSkill}
+          />
+          <SkillCard
+            logo={javascriptLogo}
+            name={"JavaScript"}
+            type={"language"}
+            currentSkill={currentSkill}
+          />
+          <SkillCard
+            logo={typescriptLogo}
+            name={"TypeScript"}
+            type={"language"}
+            currentSkill={currentSkill}
+          />
+          <SkillCard
+            logo={cssLogo}
+            name={"CSS"}
+            type={"language"}
+            currentSkill={currentSkill}
+          />
+          <SkillCard
+            logo={sassLogo}
+            name={"SASS"}
+            type={"language"}
+            currentSkill={currentSkill}
+          />
+          <SkillCard
+            logo={nodeLogo}
+            name={"Node.js"}
+            type={"framework"}
+            currentSkill={currentSkill}
+          />
+          <SkillCard
+            logo={mysqlLogo}
+            name={"MySQL"}
+            type={"database"}
+            currentSkill={currentSkill}
+          />
+          <SkillCard
+            logo={githubLogo}
+            name={"Github"}
+            type={"tool"}
+            currentSkill={currentSkill}
+          />
+          <SkillCard
+            logo={gitLogo}
+            name={"Git"}
+            type={"tool"}
+            currentSkill={currentSkill}
+          />
+          <SkillCard
+            logo={vscodeLogo}
+            name={"VSCode"}
+            type={"tool"}
+            currentSkill={currentSkill}
+          />
+          <SkillCard
+            logo={viteLogo}
+            name={"Vite"}
+            type={"tool"}
+            currentSkill={currentSkill}
+          />
+        </div>
       </div>
     </div>
   );

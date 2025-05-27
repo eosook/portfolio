@@ -14,6 +14,14 @@
   min-height: 100dvh;
   // background: linear-gradient(135deg, #b6a9ce 45%, white 45%, white 48%, var(--background) 48%);
   // border-bottom: 80px solid #b6a9ce;
+
+  &__container{
+    // background-color: var(--projects);
+    // box-shadow: 10px 10px 10px grey;
+    // border: 1px solid var(--projects);
+    border-radius: 16px;
+    min-height: 80dvh;
+  }
   &__header {
     @include sectionTitle;
     text-align: center;
@@ -29,6 +37,7 @@
     margin: 0 auto;
     gap: 1rem;
     padding: 1rem;
+    
     @include tablet {
       display: flex;
       justify-content: center;
